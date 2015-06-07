@@ -1,0 +1,15 @@
+2015-06-07T08:21:54.683338062 0.550178s notice: Recursively removing directory /run/media/riza/DATA/Documents/FunProjects/elixir/elixir_jobs/rethinkdb_data/tmp
+2015-06-07T08:21:54.774046742 0.640888s notice: Initializing directory /run/media/riza/DATA/Documents/FunProjects/elixir/elixir_jobs/rethinkdb_data
+2015-06-07T08:21:54.774205701 0.641044s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/run/media/riza/DATA/Documents/FunProjects/elixir/elixir_jobs/rethinkdb_data' did not already exist or is empty.)
+2015-06-07T08:21:54.774261574 0.641101s notice: Running rethinkdb 2.0.2 (GCC 4.9.2)...
+2015-06-07T08:21:54.809041053 0.675882s notice: Running on Linux 4.0.4-2-ARCH x86_64
+2015-06-07T08:21:54.809181504 0.676021s notice: Loading data from directory /run/media/riza/DATA/Documents/FunProjects/elixir/elixir_jobs/rethinkdb_data
+2015-06-07T08:21:56.815370674 2.682222s info: Automatically using cache size of 100 MB
+2015-06-07T08:21:56.815612814 2.682452s warn: Cache size does not leave much memory for server and query overhead (available memory: 803 MB).
+2015-06-07T08:21:56.815616167 2.682455s warn: Cache size is very low and may impact performance.
+2015-06-07T08:21:56.855268410 2.722108s notice: Listening for intracluster connections on port 29015
+2015-06-07T08:21:56.894020887 2.760860s notice: Listening for client driver connections on port 28015
+2015-06-07T08:21:56.894261491 2.761101s notice: Listening for administrative HTTP connections on port 8080
+2015-06-07T08:21:56.894264983 2.761104s notice: Listening on addresses: 127.0.0.1, ::1
+2015-06-07T08:21:56.894268615 2.761108s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2015-06-07T08:21:56.894271757 2.761111s notice: Server ready, "SonicMaster_2o5" 23b52367-a49f-404d-b1cd-9ccb3d41baa2
