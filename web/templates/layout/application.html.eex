@@ -12,25 +12,27 @@
   </head>
 
   <body>
-    <div class="container" role="main">
-      <div class="header" style="margin-bottom: 50px;">
+    <div class="header" style="text-align: center; margin-bottom: 50px;">
+      <a href="/">
         <img src="/images/phoenix.png">
-      </div>
+      </a>
+    </div>
+
+    <div class="container" role="main">
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <div class="ui piled segment">
-        <h4 class="ui header">Elixir Jobs</h4>
-        <p>Elixir Jobs is the best place to find and list jobs related to Elixir Programming Language.
-          Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
-        </p>
-        <p>Find the most qualified people in the most unexpected places. Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a></p>
-      </div>
 
 
       <%= @inner %>
 
+
+
     </div> <!-- /container -->
+
+    <footer style="padding-top: 20px; padding-bottom:20px; text-align: center; margin-top: 20px;" class="ui inverted segment">
+      Made With Love By <a href="http://elixirdose.com/">ElixirDose</a>
+    </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>
   </body>

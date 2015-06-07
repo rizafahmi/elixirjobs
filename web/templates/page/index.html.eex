@@ -1,33 +1,23 @@
 
+<div class="ui piled segment">
+  <h4 class="ui header">Elixir Jobs</h4>
+  <p>Elixir Jobs is the best place to find and list jobs related to Elixir Programming Language.
+    Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
+  </p>
+  <p>Find the most qualified people in the most unexpected places. Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a></p>
+</div>
+
+
 <div class="ui right aligned raised segment">
-  <a href="#" class="ui huge orange button">Post a job</a>
+  <a href="#" class="ui huge orange fluid button">Post a job</a>
 </div>
 
 
 <div class="ui raised segment">
   <div class="ui divided list">
-    <div class="item" style="padding: 22px;">
-      <img class="ui avatar image" src="http://placehold.it/25x25">
-      <div style="padding-left: 20px;" class="content">
-        <a href="#">
-          <div class="header">Android Authority</div>
-          <span>Full Stack JavaScript Developer</span>
-        </a>
-        <div class="ui teal label">New</div>
-      </div>
-      <div class="right floated compact ui">Jun  6</div>
-    </div>
-
-    <div class="item" style="padding: 22px;">
-      <img class="ui avatar image" src="http://placehold.it/25x25">
-      <div style="padding-left: 20px;" class="content">
-        <a href="#">
-          <div class="header">Android Authority</div>
-          <span>Full Stack JavaScript Developer</span>
-        </a>
-      </div>
-      <div class="right floated compact ui">Jun  6</div>
-    </div>
+    <%= for job <- @jobs do %>
+      <%= render "job.html", conn: @conn, job: job %>
+    <% end %>
 
   </div>
 </div>
