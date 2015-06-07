@@ -13,12 +13,20 @@
 
   <body>
     <div class="container" role="main">
-      <div class="header">
+      <div class="header" style="margin-bottom: 50px;">
         <img src="/images/phoenix.png">
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <div class="ui piled segment">
+        <h4 class="ui header">Elixir Jobs</h4>
+        <p>Elixir Jobs is the best place to find and list jobs related to Elixir Programming Language.
+          Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
+        </p>
+        <p>Find the most qualified people in the most unexpected places. Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a></p>
+      </div>
+
 
       <%= @inner %>
 
