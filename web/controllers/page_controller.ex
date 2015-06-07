@@ -1,6 +1,9 @@
 defmodule ElixirJobs.PageController do
   use ElixirJobs.Web, :controller
 
+  alias Exrethinkdb.Query
+  alias ElixirJobs.Repo
+
   plug :action
   plug :render
 
@@ -11,7 +14,11 @@ defmodule ElixirJobs.PageController do
       %{"id" => 2, "title" => "Elixir Developer", "company" => "ElixirDose"
         }
     ]
-    assign conn, :jobs, jobs
+
+    q = Query.table("jobs")
+    result = Repo.run(q)
+
+    assign conn, :jobs, result.data
   end
 
   def show(conn, %{"id" => id}) do
