@@ -8,12 +8,6 @@ defmodule ElixirJobs.PageController do
   plug :render
 
   def index(conn, _params) do
-    jobs = [
-      %{"id" => 1, "title" => "Ruby Developer", "company" => "Android Authority",
-        "logo" => "android_autority.png"},
-      %{"id" => 2, "title" => "Elixir Developer", "company" => "ElixirDose"
-        }
-    ]
 
     q = Query.table("jobs")
     result = Repo.run(q)
@@ -23,6 +17,13 @@ defmodule ElixirJobs.PageController do
 
   def show(conn, %{"id" => id}) do
     IO.inspect id
-    assign conn, :id, id
+    q = Query.table("jobs")
+      |> Query.filter(%{id: id})
+
+    result = Repo.run q
+    # job = hd(result)
+    IO.inspect result
+
+    assign conn, :job, hd(result.data)
   end
 end
