@@ -1,18 +1,34 @@
 
 <div class="ui piled segment">
   <h4 class="ui header">Elixir Jobs</h4>
-  <p>Elixir Jobs is the best place to find and list jobs related to Elixir Programming Language.
-    Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
+  <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="elixir-lang.org" target="_blank">Elixir Programming Language</a>.
   </p>
-  <p>Find the most qualified people in the most unexpected places. Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a></p>
+  <p>Browse the <a href="#">99 active jobs</a> or <a href="#">create your profile</a> to join <a href="#">99 registered Elixir developers</a>.
+    <p>Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
+  Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a>.</p>
 </div>
 
 
 <div class="ui right aligned raised segment">
-  <a href="#" class="ui huge orange fluid button">Post a job</a>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <a href="#" class="ui huge orange fluid button">Post a job</a>
+    </div>
+    <div class="eight wide column">
+      <a href="#" class="ui huge green fluid button">Create a profile</a>
+    </div>
+  </div>
 </div>
 
 
+<div class="ui grid">
+  <div class="twelve wide column">
+    <h3>Recent Jobs</h3>
+  </div>
+  <div class="four wide column">
+    Last job about 8 hours ago.
+  </div>
+</div>
 <div class="ui raised segment">
   <div class="ui divided list">
     <%= for job <- @jobs do %>

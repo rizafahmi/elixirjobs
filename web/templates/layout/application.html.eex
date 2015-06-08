@@ -7,14 +7,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Phoenix!</title>
+    <title>Elixir Jobs</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
   <body>
-    <div class="header" style="text-align: center; margin-bottom: 50px;">
+    <div class="header" style="text-align: center; margin-top: 20px; margin-bottom: 50px;">
       <a href="/">
-        <img src="/images/phoenix.png">
+        <h1 style="font-size: 64px; color: black;">Elixir Jobs</h1>
       </a>
     </div>
 
