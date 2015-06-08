@@ -12,7 +12,22 @@ defmodule ElixirJobs.PageController do
     q = Query.table("jobs")
     result = Repo.run(q)
 
-    assign conn, :jobs, result.data
+    devs = [
+       %{"id" => 1, "name" => "Veronika Ossi", "description" => "Living in New York who enjoys kittens, music, and partying.",
+         "picture" => "android_autority.png"},
+       %{"id" => 2, "name" => "Steve Jobes", "description" => "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
+         "picture" => "steve.jpg"
+         },
+       %{"id" => 3, "name" => "Steve Jobes", "description" => "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
+         "picture" => "steve.jpg"
+         },
+       %{"id" => 4, "name" => "Veronika Ossi", "description" => "Living in New York who enjoys kittens, music, and partying.",
+         "picture" => "android_autority.png"},
+     ]
+
+    conn
+    |> assign(:jobs, result.data)
+    |> assign(:devs, devs)
   end
 
   def show(conn, %{"id" => id}) do
@@ -21,8 +36,6 @@ defmodule ElixirJobs.PageController do
       |> Query.filter(%{id: id})
 
     result = Repo.run q
-    # job = hd(result)
-    IO.inspect result
 
     assign conn, :job, hd(result.data)
   end

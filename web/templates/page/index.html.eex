@@ -37,3 +37,19 @@
 
   </div>
 </div>
+
+
+<div class="ui grid">
+  <div class="sixteen wide column">
+    <h3>Featured Developers</h3>
+  </div>
+</div>
+<div class="ui raised segment">
+
+  <div class="ui link cards">
+    <%= for dev <- @devs do %>
+      <%= render "dev.html", conn: @conn, dev: dev %>
+    <% end %>
+  </div>
+
+</div>

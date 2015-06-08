@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Elixir Jobs</title>
+    <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

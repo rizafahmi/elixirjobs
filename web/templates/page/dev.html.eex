@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="image">
+    <img src="/images/<%= @dev["picture"] %>">
+  </div>
+  <div class="content">
+    <div class="header"><%= @dev["name"] %></div>
+    <div class="description"><%= @dev["description"] %></div>
+  </div>
+  <div class="extra content">
+    <span class="right floated">
+      Joined in 2013
+    </span>
+    <span>
+      <i class="location arrow icon"></i>
+      <%= if @dev["location"] do %>
+      <%= @dev["location"] %>
+      <% else %>
+      Location not set
+      <% end %>
+    </span>
+  </div>
+</div>
