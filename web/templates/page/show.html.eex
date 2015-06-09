@@ -1,1 +1,39 @@
-<h1><%= @job["title"] %></h1>
+<div class="ui raised segment" style="padding-bottom: 42px;">
+  <h2>
+    <%= @job["title"] %>
+  </h2>
+  <h5>
+    <%= if @job["logo"] do %>
+    <img src="/images/<%= @job["logo"] %>" style="width: 25px;">
+    <% else %>
+    <i class="suitcase icon"></i>
+    <% end %>
+
+    <span><%= @job["company"] %></span>
+
+    <i class="marker icon"></i>
+    <%= if @job["location"] do %>
+    <span><%= @job["location"] %></span>
+    <% else %>
+    <span>Not Set</span>
+    <% end %>
+  </h5>
+
+  <div class="ui divider"></div>
+  <div class="ui grid">
+    <div class="five wide column">
+      <%= if @job["job_status"] == "Remote" do %>
+      <div class="ui green horizontal label"><i class="world icon"></i> Remote</div>
+      <% end %>
+      <%= if @job["job_type"] == "Hourly Contract" do %>
+      <div class="ui horizontal label"><i class="wait icon"></i> Hourly Contract</div>
+      <% end %>
+      <div class="ui divider"></div>
+      <i class="mail icon"></i> <%= @job["email"] %>
+      <div class="ui divider"></div>
+      <i class="calendar icon"></i> Posted On <%= @job["date_created"]["epoch_time"] %>
+    </div>
+    <div class="nine wide column"><%= raw @job["description"] %></div>
+  </div>
+
+</div>
