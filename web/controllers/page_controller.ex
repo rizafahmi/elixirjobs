@@ -10,24 +10,22 @@ defmodule ElixirJobs.PageController do
   def index(conn, _params) do
 
     q = Query.table("jobs")
-    result = Repo.run(q)
+    jobs = Repo.run(q)
 
     devs = [
-       %{"id" => 1, "name" => "Veronika Ossi", "description" => "Living in New York who enjoys kittens, music, and partying.",
-         "picture" => "android_autority.png"},
-       %{"id" => 2, "name" => "Steve Jobes", "description" => "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
-         "picture" => "steve.jpg"
-         },
        %{"id" => 3, "name" => "Steve Jobes", "description" => "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
-         "picture" => "steve.jpg"
+         "picture" => "steve.jpg", "location" => "Cupertino"
          },
        %{"id" => 4, "name" => "Veronika Ossi", "description" => "Living in New York who enjoys kittens, music, and partying.",
-         "picture" => "android_autority.png"},
+         "picture" => "geek.jpg"},
      ]
 
+    q = Query.table("devs")
+    devs = Repo.run(q)
+
     conn
-    |> assign(:jobs, result.data)
-    |> assign(:devs, devs)
+    |> assign(:jobs, jobs.data)
+    |> assign(:devs, devs.data)
   end
 
   def show(conn, %{"id" => id}) do

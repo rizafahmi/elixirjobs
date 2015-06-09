@@ -15,8 +15,9 @@ defmodule ElixirJobs.Router do
   scope "/", ElixirJobs do
     pipe_through :browser # Use the default browser stack
 
-    # get "/", PageController, :index
-    resources "/", PageController
+    get "/", PageController, :index
+    get "/jobs/:id", PageController, :show
+    # resources "/", PageController
 
   end
 
