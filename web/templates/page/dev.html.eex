@@ -1,9 +1,11 @@
 <div class="card">
-  <div class="image">
+  <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="image">
     <img src="/images/<%= @dev["picture"] %>">
-  </div>
+  </a>
   <div class="content">
-    <div class="header"><%= @dev["name"] %></div>
+
+
+    <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="header"><%= @dev["name"] %></a>
     <div class="description"><%= @dev["description"] %></div>
   </div>
   <div class="extra content">

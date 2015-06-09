@@ -8,6 +8,9 @@
   Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a>.</p>
 </div>
 
+<div class="ui right aligned segment">
+  Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a>
+</div>
 
 <div class="ui right aligned raised segment">
   <div class="ui grid">

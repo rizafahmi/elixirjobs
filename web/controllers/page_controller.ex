@@ -12,14 +12,6 @@ defmodule ElixirJobs.PageController do
     q = Query.table("jobs")
     jobs = Repo.run(q)
 
-    devs = [
-       %{"id" => 3, "name" => "Steve Jobes", "description" => "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
-         "picture" => "steve.jpg", "location" => "Cupertino"
-         },
-       %{"id" => 4, "name" => "Veronika Ossi", "description" => "Living in New York who enjoys kittens, music, and partying.",
-         "picture" => "geek.jpg"},
-     ]
-
     q = Query.table("devs")
     devs = Repo.run(q)
 
