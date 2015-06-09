@@ -10,7 +10,7 @@
   </div>
   <div class="extra content">
     <span class="right floated">
-      Joined in 2013
+      <%= @dev["date_joined"]["epoch_time"] %>
     </span>
     <span>
       <i class="location arrow icon"></i>

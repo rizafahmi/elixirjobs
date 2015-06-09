@@ -33,6 +33,7 @@ defmodule ElixirJobs.Mixfile do
      {:phoenix_live_reload, "~> 0.4", only: :dev},
      {:cowboy, "~> 1.0"},
      {:exrethinkdb, github: "hamiltop/exrethinkdb", ref: "55fb5b5ed892f28b7ae8ee1b2f8e54fb651bd611"},
+     {:timex, "~> 0.13.4"}
     ]
   end
 end
