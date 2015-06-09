@@ -32,7 +32,7 @@
     </div> <!-- /container -->
 
     <footer style="padding-top: 20px; padding-bottom:20px; text-align: center; margin-top: 20px;" class="ui inverted segment">
-      Made With Love By <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
+      Made With <i class="heart icon"></i>By <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>
