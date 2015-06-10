@@ -21,12 +21,15 @@ defmodule ElixirJobs.PageController do
   end
 
   def show(conn, %{"id" => id}) do
-    IO.inspect id
     q = Query.table("jobs")
       |> Query.filter(%{id: id})
 
     result = Repo.run q
 
     assign conn, :job, hd(result.data)
+  end
+
+  def new(conn, _params) do
+    conn
   end
 end
