@@ -6,7 +6,7 @@
 
 
     <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="header"><%= @dev["name"] %></a>
-    <div class="description"><%= @dev["description"] %></div>
+    <div class="description"><%= @dev["short_desc"] %></div>
   </div>
   <div class="extra content">
     <span class="right floated">

@@ -1,1 +1,25 @@
-<h1>Developer Name: <%= @dev["name"] %></h1>
+<div class="ui raised segment" style="padding-bottom: 42px;">
+  <div class="ui grid">
+    <div class="four wide column">
+      <img class="ui small centered rounded image" src="/images/<%= @dev["picture"] %>">
+
+      <div class="ui divider"></div>
+      <i class="world icon"></i>
+      <a href="<%= @dev["website"] %>" target="_blank"> Website </a><br>
+      <i class="mail icon"></i> <%= @dev["email"] %><br>
+      <i class="twitter icon"></i> @<%= @dev["twitter"] %><br>
+      <i class="suitcase icon"></i> <a href="<%= @dev["resume_link"] %>" target="_blank">View Resume</a><br>
+      <i class="github icon"></i> <a href="https://github.com/<%= @dev["github"] %>" target="_blank">Github</a><br>
+      <div class="ui divider"></div>
+      <i class="calendar icon"></i> Created on <%= @dev["date_joined"]["epoch_time"] %>
+    </div>
+    <div class="twelve wide column">
+      <h2>
+        <%= @dev["name"] %>
+      </h2>
+      <h5><%= @dev["short_desc"] %></h5>
+      <div class="ui divider"></div>
+      <p><%= raw @dev["description"] %></p>
+    </div>
+
+</div>
