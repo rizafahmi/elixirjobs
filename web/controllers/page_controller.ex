@@ -32,4 +32,10 @@ defmodule ElixirJobs.PageController do
   def new(conn, _params) do
     conn
   end
+
+  def create(conn, _params) do
+    IO.inspect "POSTED!"
+
+    conn
+  end
 end

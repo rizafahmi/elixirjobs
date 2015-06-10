@@ -18,6 +18,7 @@ defmodule ElixirJobs.Router do
     get "/", PageController, :index
     get "/job/new", PageController, :new
     get "/job/:id", PageController, :show
+    post "/job", PageController, :create
     # resources "/", PageController
 
     get "/dev/:id", DevController, :show
