@@ -15,11 +15,14 @@ defmodule ElixirJobs.Router do
   scope "/", ElixirJobs do
     pipe_through :browser # Use the default browser stack
 
+    # resources "/", PageController
     get "/", PageController, :index
     get "/job/new", PageController, :new
     get "/job/:id", PageController, :show
     post "/job", PageController, :create
-    # resources "/", PageController
+
+    get "/users/register", UserController, :new
+    post "/users", UserController, :create
 
     get "/dev/:id", DevController, :show
 

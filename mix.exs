@@ -17,7 +17,7 @@ defmodule ElixirJobs.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {ElixirJobs, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :comeonin]]
   end
 
   # Specifies which paths to compile per environment
@@ -33,7 +33,8 @@ defmodule ElixirJobs.Mixfile do
      {:phoenix_live_reload, "~> 0.4", only: :dev},
      {:cowboy, "~> 1.0"},
      {:exrethinkdb, github: "hamiltop/exrethinkdb", ref: "55fb5b5ed892f28b7ae8ee1b2f8e54fb651bd611"},
-     {:timex, "~> 0.13.4"}
+     {:timex, "~> 0.13.4"},
+     {:comeonin, "~> 1.0"}
     ]
   end
 end

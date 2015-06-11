@@ -15,7 +15,7 @@
       <a href="<%= page_path(@conn, :new) %>" class="ui huge orange fluid button">Post a job</a>
     </div>
     <div class="eight wide column">
-      <a href="#" class="ui huge green fluid button">Create a profile</a>
+      <a href="<%= user_path(@conn, :new) %>" class="ui huge green fluid button">Create a profile</a>
     </div>
   </div>
 </div>

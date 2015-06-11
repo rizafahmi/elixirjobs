@@ -10,4 +10,6 @@ import {Socket} from "phoenix"
 let App = {
 }
 
+$('.ui.checkbox').checkbox();
+
 export default App

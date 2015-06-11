@@ -39,8 +39,11 @@
       <% end %>
 
 
+      <!-- <div class="ui right aligned segment"> -->
+      <!--   Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a> -->
+      <!-- </div> -->
       <div class="ui right aligned segment">
-        Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a>
+        You're not logged-in yet. <a href="#">Click here</a> to login or <a href="<%= user_path(@conn, :new) %>">register</a>.
       </div>
 
 
