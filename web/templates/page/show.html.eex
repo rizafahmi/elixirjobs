@@ -2,22 +2,28 @@
   <h2>
     <%= @job["title"] %>
   </h2>
-  <h5>
-    <%= if @job["logo"] do %>
-    <img src="/images/<%= @job["logo"] %>" style="width: 25px;">
-    <% else %>
-    <i class="suitcase icon"></i>
-    <% end %>
+  <div class="ui grid">
+    <div class="two wide column">
+      <%= if @job["logo"] do %>
+      <img src="<%= @job["logo"] %>" class="ui tiny image">
+      <% else %>
+      <i class="suitcase icon"></i>
+      <% end %>
+    </div>
+    <div class="fourteen wide column">
 
-    <span><%= @job["company"] %></span>
+      <h5>
+        <span><%= @job["company"] %></span>
 
-    <i class="marker icon"></i>
-    <%= if @job["location"] do %>
-    <span><%= @job["location"] %></span>
-    <% else %>
-    <span>Not Set</span>
-    <% end %>
-  </h5>
+        <i class="marker icon"></i>
+        <%= if @job["location"] do %>
+        <span><%= @job["location"] %></span>
+        <% else %>
+        <span>Not Set</span>
+        <% end %>
+      </h5>
+    </div>
+  </div>
 
   <div class="ui divider"></div>
   <div class="ui grid">

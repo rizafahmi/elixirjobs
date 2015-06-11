@@ -1,6 +1,6 @@
 <div class="item" style="padding: 22px;">
   <%= if @job["logo"] do %>
-  <img class="ui avatar image" src="/images/<%= @job["logo"] %>">
+  <img class="ui avatar image" src="<%= @job["logo"] %>">
   <% else %>
   <img class="ui avatar image" src="http://placehold.it/25x25">
   <% end %>

@@ -11,6 +11,10 @@
       <input type="text" name="company" placeholder="Your company name">
     </div>
     <div class="field">
+      <label for="">Company Logo</label>
+      <input type="text" name="logo" placeholder="http://elixirdose.com/images/logo.png">
+    </div>
+    <div class="field">
       <label for="">Location</label>
       <input type="text" name="location" placeholder="Company Location">
     </div>

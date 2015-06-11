@@ -27,8 +27,8 @@ defmodule ElixirJobs.PageController do
     result = Repo.run q
 
     conn
-    |> assign :job, hd(result.data)
-    |> render "show.html"
+    |> assign(:job, hd(result.data))
+    |> render("show.html")
   end
 
   def new(conn, _params) do
@@ -36,8 +36,21 @@ defmodule ElixirJobs.PageController do
   end
 
   def create(conn, params) do
-    job = %{title: params["title"]}
-    IO.inspect job
+    job = %{
+      title: params["title"],
+      company: params["company"],
+      description: params["description"],
+      email: params["email"],
+      job_type: params["job_type"],
+      location: params["location"],
+      job_status: params["job_status"],
+      logo: params["logo"]
+      }
+
+    q = Query.table("jobs")
+    |> Query.insert(job)
+    Repo.run(q)
+
     conn
     |> put_flash(:info, "Yay! Job posted!!") 
     |> redirect to: "/"
