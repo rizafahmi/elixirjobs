@@ -19,13 +19,30 @@
       </a>
     </div>
 
+
+
+
     <div class="container" role="main">
+
+      <%= if get_flash(@conn, :info) do %>
+      <div class="ui teal large message">
+        <i class="close icon"></i>
+        <%= get_flash(@conn, :info) %>
+      </div>
+      <% end %>
+
+      <%= if get_flash(@conn, :error) do %>
+      <div class="ui negative large message">
+        <i class="close icon"></i>
+        <%= get_flash(@conn, :error) %>
+      </div>
+      <% end %>
+
+
       <div class="ui right aligned segment">
         Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a>
       </div>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
 
       <%= @inner %>

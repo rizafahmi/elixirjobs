@@ -1,6 +1,7 @@
 <div class="ui segment">
   <form class="ui form" action="<%= page_path(@conn, :create) %>" method="post">
     <div class="ui dividing header">New Job</div>
+    <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
     <div class="field">
       <label for="">Job Title</label>
       <input type="text" name="title" placeholder="Your Job Title such as Elixir Developer Needed">

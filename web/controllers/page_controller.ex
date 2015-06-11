@@ -35,7 +35,8 @@ defmodule ElixirJobs.PageController do
 
   def create(conn, _params) do
     IO.inspect "POSTED!"
-
     conn
+    |> put_flash(:info, "Yay! Job posted!!") 
+    |> redirect to: "/"
   end
 end
