@@ -46,7 +46,9 @@ defmodule ElixirJobs.UserController do
     q = Query.table("users")
     |> Query.filter(%{email: email})
 
-    Repo.run(q).data |> List.first
+    user = Repo.run(q).data |> List.first
+    IO.inspect user
+    user
 
   end
 
@@ -58,11 +60,7 @@ defmodule ElixirJobs.UserController do
 
   defp authenticate(conn, _params) do
     if is_nil(get_session(conn, :user)) do
-      if is_nil(do_login(conn.assigns[:email], conn.assigns[:password])) do
-        conn |> put_flash(:error, "Error login") |> redirect(to: "/") |> halt
-      else
-        conn
-      end
+        conn |> put_flash(:error, "You need to login first") |> redirect(to: "/users/login") |> halt
     else
       conn
     end
