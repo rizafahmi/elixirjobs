@@ -26,6 +26,7 @@ defmodule ElixirJobs.Router do
     post "/users", UserController, :create
     get "/users/new_profile", UserController, :new_profile
     post "/users/new_profile", UserController, :create_profile
+    get "/users/logout", UserController, :logout
 
     get "/dev/:id", DevController, :show
 

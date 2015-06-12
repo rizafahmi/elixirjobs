@@ -50,6 +50,11 @@ defmodule ElixirJobs.UserController do
 
   end
 
+  def logout(conn, _params) do
+    conn = delete_session(conn, :user)
+    conn |> put_flash(:info, "You're logged out!") |> redirect(to: "/")
+  end
+
 
   defp authenticate(conn, _params) do
     if is_nil(do_login(conn.assigns[:email], conn.assigns[:password])) do
