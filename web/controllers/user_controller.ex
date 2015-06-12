@@ -4,6 +4,7 @@ defmodule ElixirJobs.UserController do
   alias Exrethinkdb.Query
   alias ElixirJobs.Repo
 
+  plug :attach_sessions
   plug :action
 
   def login(conn, _params) do
@@ -56,6 +57,10 @@ defmodule ElixirJobs.UserController do
     else
       conn
     end
+  end
+
+  defp attach_sessions(conn, _params) do
+    conn |> assign(:user, get_session(conn, :user))
   end
 
 end

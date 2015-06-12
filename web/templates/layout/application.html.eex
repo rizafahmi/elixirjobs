@@ -39,13 +39,15 @@
       <% end %>
 
 
-      <!-- <div class="ui right aligned segment"> -->
-      <!--   Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a> -->
-      <!-- </div> -->
+      <%= if @user do %>
+      <div class="ui right aligned segment">
+        Welcome, <a href="#">Riza</a>. Click here to <a href="#">Logout.</a>
+      </div>
+    <% else %>
       <div class="ui right aligned segment">
         You're not logged-in yet. <a href="#">Click here</a> to login or <a href="<%= user_path(@conn, :login) %>">register</a>.
       </div>
-
+      <% end %>
 
 
       <%= @inner %>

@@ -5,6 +5,7 @@ defmodule ElixirJobs.PageController do
   alias ElixirJobs.Repo
 
   plug :authenticate when action in [:new]
+  plug :attach_sessions
   plug :action
 
   def index(conn, _params) do
@@ -63,6 +64,10 @@ defmodule ElixirJobs.PageController do
     else
       conn
     end
+  end
+
+  defp attach_sessions(conn, _params) do
+    conn |> assign(:user, get_session(conn, :user))
   end
 
 end

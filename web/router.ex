@@ -22,7 +22,7 @@ defmodule ElixirJobs.Router do
     post "/job", PageController, :create
 
     get "/users/login", UserController, :login
-    post "/users", UserController, :process_login
+    post "/users/process_login", UserController, :process_login
     post "/users", UserController, :create
     get "/users/new_profile", UserController, :new_profile
     post "/users/new_profile", UserController, :create_profile
