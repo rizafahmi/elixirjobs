@@ -46,7 +46,8 @@ defmodule ElixirJobs.PageController do
       job_type: params["job_type"],
       location: params["location"],
       job_status: params["job_status"],
-      logo: params["logo"]
+      logo: params["logo"],
+      posted_by: get_session(conn, :user)
       }
 
     q = Query.table("jobs")
