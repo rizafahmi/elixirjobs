@@ -18,15 +18,15 @@ var formRules = {
   name : {
     identifier : 'name',
     rules : [{
-      type : 'empty',
-      prompt : 'Please enter a name'
+      type : 'length[4]',
+      prompt : 'Please enter a name, at least 4 characters'
     }]
   },
   password : {
     identifier : 'password',
     rules : [{
-      type : 'empty',
-      prompt : 'Please enter your super secret password'
+      type : 'length[6]',
+      prompt : 'Please provide at least 6 character of password'
     }]
   },
   confirmPassword : {
