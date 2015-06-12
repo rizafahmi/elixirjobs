@@ -4,6 +4,7 @@ defmodule ElixirJobs.PageController do
   alias Exrethinkdb.Query
   alias ElixirJobs.Repo
 
+  plug :authenticate when action in [:new]
   plug :action
 
   def index(conn, _params) do
@@ -55,4 +56,13 @@ defmodule ElixirJobs.PageController do
     |> put_flash(:info, "Yay! Job posted!!") 
     |> redirect to: "/"
   end
+
+  defp authenticate(conn, _params) do
+    if is_nil(ElixirJobs.UserController.do_login(conn.assigns[:email], conn.assigns[:password])) do
+      conn |> put_flash(:info, "Please do login first.") |> redirect(to: "/") |> halt
+    else
+      conn
+    end
+  end
+
 end
