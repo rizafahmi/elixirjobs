@@ -59,8 +59,12 @@ defmodule ElixirJobs.PageController do
   end
 
   defp authenticate(conn, _params) do
-    if is_nil(ElixirJobs.UserController.do_login(conn.assigns[:email], conn.assigns[:password])) do
-      conn |> put_flash(:info, "Please do login first.") |> redirect(to: "/users/login") |> halt
+    if is_nil(get_session(conn, :user)) do
+      if is_nil(ElixirJobs.UserController.do_login(conn.assigns[:email], conn.assigns[:password])) do
+        conn |> put_flash(:error, "Error login") |> redirect(to: "/") |> halt
+      else
+        conn
+      end
     else
       conn
     end

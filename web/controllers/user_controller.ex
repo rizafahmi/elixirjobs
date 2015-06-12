@@ -57,8 +57,12 @@ defmodule ElixirJobs.UserController do
 
 
   defp authenticate(conn, _params) do
-    if is_nil(do_login(conn.assigns[:email], conn.assigns[:password])) do
-      conn |> put_flash(:error, "Error login") |> redirect(to: "/") |> halt
+    if is_nil(get_session(conn, :user)) do
+      if is_nil(do_login(conn.assigns[:email], conn.assigns[:password])) do
+        conn |> put_flash(:error, "Error login") |> redirect(to: "/") |> halt
+      else
+        conn
+      end
     else
       conn
     end
