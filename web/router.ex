@@ -21,7 +21,8 @@ defmodule ElixirJobs.Router do
     get "/job/:id", PageController, :show
     post "/job", PageController, :create
 
-    get "/users/register", UserController, :new
+    get "/users/login", UserController, :login
+    post "/users", UserController, :process_login
     post "/users", UserController, :create
     get "/users/new_profile", UserController, :new_profile
     post "/users/new_profile", UserController, :create_profile

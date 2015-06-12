@@ -6,9 +6,9 @@ defmodule ElixirJobs.UserController do
 
   plug :action
 
-  def new(conn, _params) do
+  def login(conn, _params) do
 
-    render conn, "new.html"
+    render conn, "login.html"
   end
 
   def create(conn, params) do
@@ -30,6 +30,17 @@ defmodule ElixirJobs.UserController do
     |> redirect to: "/"
   end
 
+  def process_login(conn, params) do
+    if is_nil(do_login(params["email"], params["password"])) do
+      conn
+      |> put_flash(:error, "Login failed") |> redirect(to: "/users/login") |> halt
+    else
+      conn = put_session(conn, :user, params["email"])
+      conn
+        |> put_flash(:info, "Thanks for logging in!") |> redirect(to: "/")
+    end
+  end
+
   def do_login(email, password) do
     q = Query.table("users")
     |> Query.filter(%{email: email})
@@ -38,11 +49,13 @@ defmodule ElixirJobs.UserController do
 
   end
 
+
   defp authenticate(conn, _params) do
     if is_nil(do_login(conn.assigns[:email], conn.assigns[:password])) do
-      conn |> put_flash(:info, "Error login") |> redirect(to: "/") |> halt
+      conn |> put_flash(:error, "Error login") |> redirect(to: "/") |> halt
     else
       conn
     end
   end
+
 end
