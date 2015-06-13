@@ -11,5 +11,5 @@
     </a>
     <!-- <div class="ui teal label">New</div> -->
   </div>
-  <div class="right floated compact ui unixtime"><%= @job["date_created"]["epoch_time"] %></div>
+  <!-- <div class="right floated compact ui unixtime"><%= convert_date @job["date_created"] %></div> -->
 </div>

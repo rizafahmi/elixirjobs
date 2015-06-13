@@ -37,7 +37,7 @@
       <div class="ui divider"></div>
       <i class="mail icon"></i> <%= @job["email"] %>
       <div class="ui divider"></div>
-      <i class="calendar icon"></i> Posted On <%= @job["date_created"]["epoch_time"] %>
+      <i class="calendar icon"></i> Posted On <%= @job["date_created"] %>
     </div>
     <div class="nine wide column"><%= raw @job["description"] %></div>
   </div>

@@ -47,7 +47,8 @@ defmodule ElixirJobs.PageController do
       location: params["location"],
       job_status: params["job_status"],
       logo: params["logo"],
-      posted_by: get_session(conn, :user)
+      posted_by: get_session(conn, :user),
+      date_created: now_epoch
       }
 
     q = Query.table("jobs")
@@ -69,6 +70,11 @@ defmodule ElixirJobs.PageController do
 
   defp attach_sessions(conn, _params) do
     conn |> assign(:user, get_session(conn, :user))
+  end
+
+  defp now_epoch do
+    {mega, secs, _} = :erlang.now()
+    mega * 1000000 + secs
   end
 
 end
