@@ -1,0 +1,107 @@
+<div class="ui segment">
+  <form class="ui form" action="<%= page_path(@conn, :create) %>" method="post">
+    <div class="ui dividing header">Your Profile</div>
+    <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
+    <div class="field">
+      <label for="">Name</label>
+      <input type="text" name="name" placeholder="Your name">
+    </div>
+    <div class="field">
+      <label for="">Short Description</label>
+      <input type="text" name="short_desc" placeholder="Best way to describe yourself in short!">
+    </div>
+    <div class="field">
+      <label for="">Description</label>
+      <textarea name="description" placeholder="Now it's time to describe yourself, as long as you like!"></textarea>
+    </div>
+    <div class="field">
+      <label for="">Picture</label>
+      <div class="ui labeled input">
+        <div class="ui label">http://</div>
+        <input type="text" name="picture_url" placeholder="Your profile picture URL">
+      </div>
+    </div>
+    <div class="grouped fields">
+      <label for="">Interested in</label>
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="fulltime">
+          <label>Fulltime</label>
+        </div>
+      </div>
+
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="hourly">
+          <label>Hourly Contract</label>
+        </div>
+      </div>
+
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="term">
+          <label>Term Contract</label>
+        </div>
+      </div>
+
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="mentoring">
+          <label>Mentoring</label>
+        </div>
+      </div>
+
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="volunteer">
+          <label>Volunteer</label>
+        </div>
+      </div>
+
+      <div class="inline field">
+        <div class="ui checkbox">
+          <input type="checkbox" name="other">
+          <label>Other</label>
+        </div>
+      </div>
+
+    </div>
+    <div class="field">
+      <label for="">Location</label>
+      <input type="text" name="location" placeholder="Your current location">
+    </div>
+
+    <div class="field">
+      <label for="">Personal Website</label>
+      <div class="ui labeled input">
+        <div class="ui label">http://</div>
+        <input type="text" name="website" placeholder="Your personal website URL">
+      </div>
+    </div>
+    <div class="field">
+      <label for="">Resume URL</label>
+      <div class="ui labeled input">
+        <div class="ui label">http://</div>
+        <input type="text" name="resume_url" placeholder="Your resume URL">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="">Github URL</label>
+      <div class="ui labeled input">
+        <div class="ui label">https://</div>
+        <input type="text" name="github_url" placeholder="Your github URL">
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="">LinkedIn URL</label>
+      <div class="ui labeled input">
+        <div class="ui label">https://</div>
+        <input type="text" name="linkedin_url" placeholder="Your linkedin URL">
+      </div>
+    </div>
+
+    <button class="ui submit button" type="submit">Submit</button>
+  </form>
+</div>

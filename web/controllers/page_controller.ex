@@ -16,16 +16,23 @@ defmodule ElixirJobs.PageController do
     q = Query.table("devs")
     devs = Repo.run(q)
 
+
     current_dev = q
       |> Query.filter(%{email: get_session(conn, :user)})
       |> Repo.run
+
+    if get_session(conn, :user) do
+      current_dev = List.first(current_dev.data)
+    else
+      current_dev = nil
+    end
 
     conn
     |> assign(:jobs, jobs.data)
     |> assign(:devs, devs.data)
     |> assign(:count_jobs, Dict.size(jobs.data))
     |> assign(:count_devs, Dict.size(devs.data))
-    |> assign(:current_dev, List.first(current_dev.data))
+    |> assign(:current_dev, current_dev)
     |> render("index.html")
   end
 

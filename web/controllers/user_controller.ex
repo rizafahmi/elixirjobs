@@ -5,6 +5,7 @@ defmodule ElixirJobs.UserController do
   alias ElixirJobs.Repo
 
   plug :attach_sessions
+  plug :authenticate when action in [:new_profile]
   plug :action
 
   def login(conn, _params) do
@@ -62,7 +63,11 @@ defmodule ElixirJobs.UserController do
     conn |> put_flash(:info, "You're logged out!") |> redirect(to: "/")
   end
 
+  def new_profile(conn, _params) do
+    render conn, "profile.html"
+  end
 
+  # Private Room
   defp authenticate(conn, _params) do
     if is_nil(get_session(conn, :user)) do
         conn |> put_flash(:error, "You need to login first") |> redirect(to: "/users/login") |> halt
