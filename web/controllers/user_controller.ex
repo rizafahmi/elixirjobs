@@ -67,6 +67,64 @@ defmodule ElixirJobs.UserController do
     render conn, "profile.html"
   end
 
+  def create_profile(conn, params) do
+    array_of_interest = []
+
+    if params["fulltime"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "fulltime")
+    end
+
+    if params["hourly"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "hourly")
+    end
+
+    if params["term"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "term")
+    end
+
+    if params["mentoring"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "mentoring")
+    end
+
+    if params["volunteer"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "volunteer")
+    end
+
+    if params["other"] == "on" do
+      array_of_interest = List.insert_at(array_of_interest, -1, "other")
+    end
+
+
+    interest = Query.make_array(array_of_interest)
+
+    dev = %{
+      name: params["name"],
+      short_desc: params["short_desc"],
+      description: params["description"],
+      picture_url: params["picture_url"],
+      interest: interest,
+      location: params["location"],
+      website: params["website"],
+      resume_url: params["resume_url"],
+      github_url: params["github_url"],
+      linkedin_url: params["linkedin_url"],
+      email: get_session(conn, :user)
+      }
+
+
+    q = Query.table("devs")
+      |> Query.insert(dev)
+
+    Repo.run(q)
+
+
+    conn
+    |> put_flash(:info, "Super! Your profile added.")
+    |> redirect to: "/"
+
+  end
+
+
   # Private Room
   defp authenticate(conn, _params) do
     if is_nil(get_session(conn, :user)) do

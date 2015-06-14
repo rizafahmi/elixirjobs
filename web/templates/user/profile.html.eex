@@ -1,5 +1,5 @@
 <div class="ui segment">
-  <form class="ui form" action="<%= page_path(@conn, :create) %>" method="post">
+  <form class="ui form" action="<%= user_path(@conn, :create_profile) %>" method="post">
     <div class="ui dividing header">Your Profile</div>
     <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
     <div class="field">
