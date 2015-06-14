@@ -15,7 +15,12 @@
       <a href="<%= page_path(@conn, :new) %>" class="ui huge orange fluid button">Post a job</a>
     </div>
     <div class="eight wide column">
+      <%= if @current_dev["name"] do %>
+      <a href="<%= user_path(@conn, :edit_profile) %>" class="ui huge green fluid button">Update your profile</a>
+
+      <% else %>
       <a href="<%= user_path(@conn, :new_profile) %>" class="ui huge green fluid button">Create a profile</a>
+      <% end %>
     </div>
   </div>
 </div>
@@ -25,9 +30,9 @@
   <div class="twelve wide column">
     <h3>Recent Jobs</h3>
   </div>
-  <div class="four wide column">
-    Last job about 8 hours ago.
-  </div>
+  <!-- <div class="four wide column"> -->
+  <!--   Last job about 8 hours ago. -->
+  <!-- </div> -->
 </div>
 <div class="ui raised segment">
   <div class="ui divided list">
