@@ -19,6 +19,8 @@ defmodule ElixirJobs.PageController do
     conn
     |> assign(:jobs, jobs.data)
     |> assign(:devs, devs.data)
+    |> assign(:count_jobs, Dict.size(jobs.data))
+    |> assign(:count_devs, Dict.size(devs.data))
     |> render("index.html")
   end
 
