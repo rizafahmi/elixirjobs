@@ -4,7 +4,7 @@ defmodule ElixirJobs.PageController do
   alias Exrethinkdb.Query
   alias ElixirJobs.Repo
 
-  plug :authenticate when action in [:new]
+  plug :authenticate when action in [:new, :show]
   plug :attach_sessions
   plug :action
 

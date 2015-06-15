@@ -3,9 +3,21 @@
   <h4 class="ui header">Elixir Jobs</h4>
   <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="elixir-lang.org" target="_blank">Elixir Programming Language</a>.
   </p>
-  <p>Browse the <a href="#"><%= @count_jobs %> active jobs</a> or <a href="#">create your profile</a> to join <a href="#"><%= @count_devs %> registered Elixir developers</a>.
+  <p>Browse the <a href="#"><%= @count_jobs %> active jobs</a> or 
+  <%= if @current_dev["name"] do %>
+  <a href="<%= user_path(@conn, :edit_profile) %>">update your profile</a>
+  <% else %>
+  <a href="<%= user_path(@conn, :new_profile) %>" >create your profile</a>
+  <% end %>
+   to join 
+  <%= if @current_dev["name"] do %>
+  <a href="<%= user_path(@conn, :edit_profile) %>"><%= @count_devs %> registered Elixir developers</a>.
+  <% else %>
+  <a href="<%= user_path(@conn, :new_profile) %>"><%= @count_devs %> registered Elixir developers</a>.
+  <% end %>
+   
     <p>Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
-  Follow us on Tiwtter <a href="#" target="_blank">@elixirjobs</a>.</p>
+  Follow us on Tiwtter <a href="https://twitter.com/elixirdose" target="_blank">@elixirdose</a>.</p>
 </div>
 
 
@@ -17,7 +29,6 @@
     <div class="eight wide column">
       <%= if @current_dev["name"] do %>
       <a href="<%= user_path(@conn, :edit_profile) %>" class="ui huge green fluid button">Update your profile</a>
-
       <% else %>
       <a href="<%= user_path(@conn, :new_profile) %>" class="ui huge green fluid button">Create a profile</a>
       <% end %>
