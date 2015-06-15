@@ -1,5 +1,5 @@
 <div class="ui segment">
-  <form class="ui form" action="<%= user_path(@conn, :create_profile) %>" method="post">
+  <form class="ui form" action="<%= user_path(@conn, :update_profile) %>" method="post">
     <div class="ui dividing header">Update Your Profile</div>
     <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
     <div class="field">
@@ -25,42 +25,66 @@
       <label for="">Interested in</label>
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_fulltime"] do %>
+          <input type="checkbox" name="fulltime" checked>
+          <% else %>
           <input type="checkbox" name="fulltime">
+          <% end %>
           <label>Fulltime</label>
         </div>
       </div>
 
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_hourly"] do %>
+          <input type="checkbox" name="hourly" checked>
+          <% else %>
           <input type="checkbox" name="hourly">
+          <% end %>
           <label>Hourly Contract</label>
         </div>
       </div>
 
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_term"] do %>
+          <input type="checkbox" name="term" checked>
+          <% else %>
           <input type="checkbox" name="term">
+          <% end %>
           <label>Term Contract</label>
         </div>
       </div>
 
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_mentoring"] do %>
+          <input type="checkbox" name="mentoring" checked>
+          <% else %>
           <input type="checkbox" name="mentoring">
+          <% end %>
           <label>Mentoring</label>
         </div>
       </div>
 
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_volunteer"] do %>
+          <input type="checkbox" name="volunteer" checked>
+          <% else %>
           <input type="checkbox" name="volunteer">
+          <% end %>
           <label>Volunteer</label>
         </div>
       </div>
 
       <div class="inline field">
         <div class="ui checkbox">
+          <%= if @profile["interest_other"] do %>
+          <input type="checkbox" name="other" checked>
+          <% else %>
           <input type="checkbox" name="other">
+          <% end %>
           <label>Other</label>
         </div>
       </div>

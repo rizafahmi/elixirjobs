@@ -68,41 +68,18 @@ defmodule ElixirJobs.UserController do
   end
 
   def create_profile(conn, params) do
-    array_of_interest = []
-
-    if params["fulltime"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "fulltime")
-    end
-
-    if params["hourly"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "hourly")
-    end
-
-    if params["term"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "term")
-    end
-
-    if params["mentoring"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "mentoring")
-    end
-
-    if params["volunteer"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "volunteer")
-    end
-
-    if params["other"] == "on" do
-      array_of_interest = List.insert_at(array_of_interest, -1, "other")
-    end
-
-
-    interest = Query.make_array(array_of_interest)
 
     dev = %{
       name: params["name"],
       short_desc: params["short_desc"],
       description: params["description"],
       picture_url: params["picture_url"],
-      interest: interest,
+      interest_fulltime: params["fulltime"],
+      interest_hourly: params["hourly"],
+      interest_term: params["term"],
+      interest_mentoring: params["mentoring"],
+      interest_volunteer: params["volunteer"],
+      interest_other: params["other"],
       location: params["location"],
       website: params["website"],
       resume_url: params["resume_url"],
@@ -129,12 +106,43 @@ defmodule ElixirJobs.UserController do
       |> Query.filter(%{email: get_session(conn, :user)})
 
     profile = Repo.run(q).data |> List.first
-    IO.inspect profile
 
     conn
       |> assign(:profile, profile)
       |> render "edit_profile.html"
 
+  end
+
+  def update_profile(conn, params) do
+    dev = %{
+      name: params["name"],
+      short_desc: params["short_desc"],
+      description: params["description"],
+      picture_url: params["picture_url"],
+      interest_fulltime: params["fulltime"],
+      interest_hourly: params["hourly"],
+      interest_term: params["term"],
+      interest_mentoring: params["mentoring"],
+      interest_volunteer: params["volunteer"],
+      interest_other: params["other"],
+      location: params["location"],
+      website: params["website"],
+      resume_url: params["resume_url"],
+      github_url: params["github_url"],
+      linkedin_url: params["linkedin_url"],
+      }
+
+    q = Query.table("devs")
+      |> Query.filter(%{email: get_session(conn, :user)})
+      |> Query.update(dev)
+
+    Repo.run(q)
+
+    conn
+    |> put_flash(:info, "Super! Your profile updated.")
+    |> redirect to: "/"
+
+    conn
   end
 
 
