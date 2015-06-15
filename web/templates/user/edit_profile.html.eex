@@ -1,24 +1,24 @@
 <div class="ui segment">
   <form class="ui form" action="<%= user_path(@conn, :create_profile) %>" method="post">
-    <div class="ui dividing header">Your Profile</div>
+    <div class="ui dividing header">Update Your Profile</div>
     <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
     <div class="field">
       <label for="">Name</label>
-      <input type="text" name="name" placeholder="Your name">
+      <input type="text" name="name" placeholder="Your name" required="required" value="<%= @profile["name"] %>">
     </div>
     <div class="field">
       <label for="">Short Description</label>
-      <input type="text" name="short_desc" placeholder="Best way to describe yourself in short!">
+      <input type="text" name="short_desc" placeholder="Best way to describe yourself in short!" required="required" value="<%= @profile["short_desc"] %>">
     </div>
     <div class="field">
       <label for="">Description</label>
-      <textarea name="description" placeholder="Now it's time to describe yourself, as long as you like!"></textarea>
+      <textarea name="description" placeholder="Now it's time to describe yourself, as long as you like!" required="required"><%= @profile["description"] %></textarea>
     </div>
     <div class="field">
       <label for="">Picture</label>
       <div class="ui labeled input">
         <div class="ui label">http://</div>
-        <input type="text" name="picture_url" placeholder="Your profile picture URL">
+        <input type="text" name="picture_url" placeholder="Your profile picture URL" value="<%= @profile["picture_url"] %>">
       </div>
     </div>
     <div class="grouped fields">
@@ -68,21 +68,21 @@
     </div>
     <div class="field">
       <label for="">Location</label>
-      <input type="text" name="location" placeholder="Your current location">
+      <input type="text" name="location" placeholder="Your current location" value="<%= @profile["location"] %>">
     </div>
 
     <div class="field">
       <label for="">Personal Website</label>
       <div class="ui labeled input">
         <div class="ui label">http://</div>
-        <input type="text" name="website" placeholder="Your personal website URL">
+        <input type="text" name="website" placeholder="Your personal website URL" value="<%= @profile["website"] %>">
       </div>
     </div>
     <div class="field">
       <label for="">Resume URL</label>
       <div class="ui labeled input">
         <div class="ui label">http://</div>
-        <input type="text" name="resume_url" placeholder="Your resume URL">
+        <input type="text" name="resume_url" placeholder="Your resume URL" value="<%= @profile["resume_url"] %>">
       </div>
     </div>
 
@@ -90,7 +90,7 @@
       <label for="">Github URL</label>
       <div class="ui labeled input">
         <div class="ui label">https://</div>
-        <input type="text" name="github_url" placeholder="Your github URL">
+        <input type="text" name="github_url" placeholder="Your github URL" value="<%= @profile["github_url"] %>">
       </div>
     </div>
 
@@ -98,10 +98,10 @@
       <label for="">LinkedIn URL</label>
       <div class="ui labeled input">
         <div class="ui label">https://</div>
-        <input type="text" name="linkedin_url" placeholder="Your linkedin URL">
+        <input type="text" name="linkedin_url" placeholder="Your linkedin URL" value="<%= @profile["linkedin_url"] %>">
       </div>
     </div>
 
-    <button class="ui submit button" type="submit">Submit</button>
+    <button class="ui submit button" type="submit">Update</button>
   </form>
 </div>

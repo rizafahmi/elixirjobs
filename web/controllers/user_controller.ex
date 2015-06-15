@@ -5,7 +5,7 @@ defmodule ElixirJobs.UserController do
   alias ElixirJobs.Repo
 
   plug :attach_sessions
-  plug :authenticate when action in [:new_profile]
+  plug :authenticate when action in [:new_profile, :edit_profile]
   plug :action
 
   def login(conn, _params) do
@@ -64,7 +64,7 @@ defmodule ElixirJobs.UserController do
   end
 
   def new_profile(conn, _params) do
-    render conn, "profile.html"
+    render conn, "new_profile.html"
   end
 
   def create_profile(conn, params) do
@@ -121,6 +121,19 @@ defmodule ElixirJobs.UserController do
     conn
     |> put_flash(:info, "Super! Your profile added.")
     |> redirect to: "/"
+
+  end
+
+  def edit_profile(conn, _params) do
+    q = Query.table("devs")
+      |> Query.filter(%{email: get_session(conn, :user)})
+
+    profile = Repo.run(q).data |> List.first
+    IO.inspect profile
+
+    conn
+      |> assign(:profile, profile)
+      |> render "edit_profile.html"
 
   end
 
