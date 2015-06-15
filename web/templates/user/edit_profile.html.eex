@@ -16,10 +16,7 @@
     </div>
     <div class="field">
       <label for="">Picture</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
-        <input type="text" name="picture_url" placeholder="Your profile picture URL" value="<%= @profile["picture_url"] %>">
-      </div>
+      <input type="text" name="picture_url" placeholder="Your profile picture URL" value="<%= @profile["picture_url"] %>">
     </div>
     <div class="grouped fields">
       <label for="">Interested in</label>
@@ -97,33 +94,26 @@
 
     <div class="field">
       <label for="">Personal Website</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
-        <input type="text" name="website" placeholder="Your personal website URL" value="<%= @profile["website"] %>">
-      </div>
+      <input type="text" name="website" placeholder="Your personal website URL" value="<%= @profile["website"] %>">
     </div>
     <div class="field">
       <label for="">Resume URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
-        <input type="text" name="resume_url" placeholder="Your resume URL" value="<%= @profile["resume_url"] %>">
-      </div>
+      <input type="text" name="resume_url" placeholder="Your resume URL" value="<%= @profile["resume_url"] %>">
     </div>
 
     <div class="field">
       <label for="">Github URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">https://</div>
-        <input type="text" name="github_url" placeholder="Your github URL" value="<%= @profile["github_url"] %>">
-      </div>
+      <input type="text" name="github_url" placeholder="Your github URL" value="<%= @profile["github_url"] %>">
+    </div>
+
+    <div class="field">
+      <label for="">Twitter URL</label>
+      <input type="text" name="twitter_url" placeholder="Your twitter URL" value="<%= @profile["twitter_url"] %>">
     </div>
 
     <div class="field">
       <label for="">LinkedIn URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">https://</div>
-        <input type="text" name="linkedin_url" placeholder="Your linkedin URL" value="<%= @profile["linkedin_url"] %>">
-      </div>
+      <input type="text" name="linkedin_url" placeholder="Your linkedin URL" value="<%= @profile["linkedin_url"] %>">
     </div>
 
     <button class="ui submit button" type="submit">Update</button>

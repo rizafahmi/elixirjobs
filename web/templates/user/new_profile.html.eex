@@ -16,10 +16,7 @@
     </div>
     <div class="field">
       <label for="">Picture</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
         <input type="text" name="picture_url" placeholder="Your profile picture URL">
-      </div>
     </div>
     <div class="grouped fields">
       <label for="">Interested in</label>
@@ -73,33 +70,26 @@
 
     <div class="field">
       <label for="">Personal Website</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
-        <input type="text" name="website" placeholder="Your personal website URL">
-      </div>
+      <input type="text" name="website" placeholder="Your personal website URL">
     </div>
     <div class="field">
       <label for="">Resume URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">http://</div>
-        <input type="text" name="resume_url" placeholder="Your resume URL">
-      </div>
+      <input type="text" name="resume_url" placeholder="Your resume URL">
+    </div>
+
+    <div class="field">
+      <label for="">Twitter URL</label>
+      <input type="text" name="twitter_url" placeholder="Your twitter URL">
     </div>
 
     <div class="field">
       <label for="">Github URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">https://</div>
-        <input type="text" name="github_url" placeholder="Your github URL">
-      </div>
+      <input type="text" name="github_url" placeholder="Your github URL">
     </div>
 
     <div class="field">
       <label for="">LinkedIn URL</label>
-      <div class="ui labeled input">
-        <div class="ui label">https://</div>
-        <input type="text" name="linkedin_url" placeholder="Your linkedin URL">
-      </div>
+      <input type="text" name="linkedin_url" placeholder="Your linkedin URL">
     </div>
 
     <button class="ui submit button" type="submit">Submit</button>

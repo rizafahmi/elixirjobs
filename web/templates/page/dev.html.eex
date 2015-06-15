@@ -1,6 +1,6 @@
 <div class="card">
   <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="image">
-    <img src="/images/<%= @dev["picture"] %>">
+    <img src="<%= @dev["picture_url"] %>">
   </a>
   <div class="content">
 

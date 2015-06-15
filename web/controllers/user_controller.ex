@@ -85,6 +85,7 @@ defmodule ElixirJobs.UserController do
       resume_url: params["resume_url"],
       github_url: params["github_url"],
       linkedin_url: params["linkedin_url"],
+      twitter_url: params["twitter_url"],
       email: get_session(conn, :user)
       }
 
@@ -130,6 +131,7 @@ defmodule ElixirJobs.UserController do
       resume_url: params["resume_url"],
       github_url: params["github_url"],
       linkedin_url: params["linkedin_url"],
+      twitter_url: params["twitter_url"],
       }
 
     q = Query.table("devs")
