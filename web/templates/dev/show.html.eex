@@ -20,7 +20,7 @@
       </h2>
       <h5><%= @dev["short_desc"] %></h5>
       <div class="ui divider"></div>
-      <p><%= raw @dev["description"] %></p>
+      <p><%= to_html @dev["description"] %></p>
     </div>
 
 </div>

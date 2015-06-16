@@ -39,7 +39,7 @@
       <div class="ui divider"></div>
       <i class="calendar icon"></i> Posted On <%= @job["date_created"] %>
     </div>
-    <div class="nine wide column"><%= raw @job["description"] %></div>
+    <div class="nine wide column"><%= to_html @job["description"] %></div>
   </div>
 
 </div>
