@@ -15,7 +15,19 @@ defmodule ElixirJobs.DevController do
 
     result = Repo.run q
 
-    assign conn, :dev, hd(result.data)
+    dev = hd(result.data)
+    if is_nil(dev["views"]) do
+      views = 1
+    else
+      views = dev["views"] + 1
+    end
+
+    Query.table("devs")
+      |> Query.get(id)
+      |> Query.update(%{views: views})
+      |> Repo.run
+
+    assign conn, :dev, dev
   end
 
   defp authenticate(conn, _params) do
