@@ -10,7 +10,7 @@
   </div>
   <div class="extra content">
     <span class="right floated">
-      <%= @dev["date_joined"]["epoch_time"] %>
+      <i class="unhide icon"></i> <%= @dev["views"] %>
     </span>
     <span>
       <i class="location arrow icon"></i>

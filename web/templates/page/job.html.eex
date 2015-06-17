@@ -12,4 +12,5 @@
     <!-- <div class="ui teal label">New</div> -->
   </div>
   <!-- <div class="right floated compact ui unixtime"><%= convert_date @job["date_created"] %></div> -->
+  <div class="right floated compact ui"><i class="unhide icon"></i> <%= @job["views"] %></div>
 </div>
