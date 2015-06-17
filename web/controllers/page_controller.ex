@@ -40,10 +40,23 @@ defmodule ElixirJobs.PageController do
     q = Query.table("jobs")
       |> Query.filter(%{id: id})
 
-    result = Repo.run q
+    result = Repo.run(q)
+
+    job = hd(result.data)
+    if is_nil(job["views"]) do
+      views = 1
+    else
+      views = job["views"] + 1
+    end
+
+    Query.table("jobs")
+      |> Query.get(id)
+      |> Query.update(%{views: views})
+      |> Repo.run
+
 
     conn
-    |> assign(:job, hd(result.data))
+    |> assign(:job, job)
     |> render("show.html")
   end
 
