@@ -1,6 +1,6 @@
 
 <div class="ui piled segment">
-  <h4 class="ui header">Elixir Jobs</h4>
+  <h4 class="ui dividing blue header">Elixir Jobs</h4>
   <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="elixir-lang.org" target="_blank">Elixir Programming Language</a>.
   </p>
   <p>Browse the <a href="#"><%= @count_jobs %> active jobs</a> or 
