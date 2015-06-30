@@ -21,7 +21,7 @@ defmodule ElixirJobs.PageController do
       |> Query.filter(%{email: get_session(conn, :user)})
       |> Repo.run
 
-    if get_session(conn, :user) do
+    if get_session(conn, :user) && List.first(current_dev.data) do
       current_dev = List.first(current_dev.data)
     else
       current_dev = nil
@@ -57,6 +57,7 @@ defmodule ElixirJobs.PageController do
 
     conn
     |> assign(:job, job)
+    |> assign(:page_title, job["title"] <> " - " <> job["company"] <> " | Elixir Jobs")
     |> render("show.html")
   end
 

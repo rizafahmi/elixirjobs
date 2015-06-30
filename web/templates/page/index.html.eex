@@ -1,7 +1,7 @@
 
 <div class="ui piled segment">
-  <h4 class="ui header">Elixir Jobs</h4>
-  <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="http://elixir-lang.org" target="_blank">Elixir Programming Language</a>.
+  <h4 class="ui dividing blue header">Elixir Jobs</h4>
+  <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="elixir-lang.org" target="_blank">Elixir Programming Language</a>.
   </p>
   <p>Browse the <a href="#"><%= @count_jobs %> active jobs</a> or 
   <%= if @current_dev["name"] do %>
@@ -36,17 +36,18 @@
   </div>
 </div>
 
-
+<br>
 <div class="ui grid">
-  <div class="twelve wide column">
-    <h3>Recent Jobs</h3>
-  </div>
+  <!-- <div class="twelve wide column"> -->
+  <!--   <h3>Recent Jobs</h3> -->
+  <!-- </div> -->
   <!-- <div class="four wide column"> -->
   <!--   Last job about 8 hours ago. -->
   <!-- </div> -->
 </div>
 <div class="ui raised segment">
   <div class="ui divided list">
+    <h3 class="ui dividing orange header">Recent Jobs</h3>
     <%= for job <- @jobs do %>
       <%= render "job.html", conn: @conn, job: job %>
     <% end %>
@@ -54,14 +55,16 @@
   </div>
 </div>
 
+<br>
 
 <div class="ui grid">
-  <div class="sixteen wide column">
-    <h3>Featured Developers</h3>
-  </div>
+<!--   <div class="sixteen wide column"> -->
+<!--     <h3>Featured Developers</h3> -->
+<!--   </div> -->
 </div>
 <div class="ui raised segment">
 
+  <h3 class="ui dividing green header">Featured Developers</h3>
   <div class="ui link cards">
     <%= for dev <- @devs do %>
       <%= render "dev.html", conn: @conn, dev: dev %>

@@ -27,7 +27,9 @@ defmodule ElixirJobs.DevController do
       |> Query.update(%{views: views})
       |> Repo.run
 
-    assign conn, :dev, dev
+    conn
+    |> assign(:dev, dev)
+    |> assign(:page_title, dev["name"] <> " | Elixir Developer")
   end
 
   defp authenticate(conn, _params) do
