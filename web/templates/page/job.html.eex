@@ -1,8 +1,8 @@
 <div class="item" style="padding: 22px;">
-  <%= if @job["logo"] do %>
+  <%= if @job["logo"] != "" do %>
   <img class="ui avatar image" src="<%= @job["logo"] %>">
   <% else %>
-  <img class="ui avatar image" src="http://placehold.it/25x25">
+  <img class="ui avatar image" src="/images/elixir-logo.png">
   <% end %>
   <div style="padding-left: 20px;" class="content">
     <a href="<%= page_path(@conn, :show, @job["id"]) %>">
