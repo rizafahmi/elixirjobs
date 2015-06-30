@@ -4,10 +4,10 @@
   </h2>
   <div class="ui grid">
     <div class="two wide column">
-      <%= if @job["logo"] do %>
+      <%= if @job["logo"] != "" do %>
       <img src="<%= @job["logo"] %>" class="ui tiny image">
       <% else %>
-      <i class="suitcase icon"></i>
+      <img class="ui avatar image" src="/images/elixir-logo.png">
       <% end %>
     </div>
     <div class="fourteen wide column">
