@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Elixir Jobs</title>
+    <title><%= assigns[:page_title] || "ElixirDose Jobs" %></title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
     <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">

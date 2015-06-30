@@ -57,6 +57,7 @@ defmodule ElixirJobs.PageController do
 
     conn
     |> assign(:job, job)
+    |> assign(:page_title, job["title"] <> " - " <> job["company"] <> " | Elixir Jobs")
     |> render("show.html")
   end
 
