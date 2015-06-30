@@ -4,8 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+
+
+
+    <meta name="description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
+    <link rel="canonical" href="http://jobs.elixirdose.com"/>
+    <!-- <link rel="publisher" href="https://plus.google.com/+AppscoId"/> -->
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Elixir Jobs From ElixirDose"/>
+    <meta property="og:description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
+    <meta property="og:url" content="http://jobs.elixirdose.com/"/>
+    <meta property="og:site_name" content="ElixirDose Jobs"/>
+    <meta property="og:image" content="/images/elixirjobs-logo.png"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
+    <meta name="twitter:title" content="Elixir Jobs From ElixirDose"/>
+    <meta name="twitter:site" content="@elixirdose"/>
+    <meta name="twitter:domain" content="ElixirDose"/>
+    <meta name="twitter:image:src" content="/images/elixirjobs-logo.png"/>
+    <meta name="author" content="ElixirDose">
 
     <title><%= assigns[:page_title] || "ElixirDose Jobs" %></title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
