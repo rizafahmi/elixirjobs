@@ -1,6 +1,10 @@
 <div class="card">
   <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="image">
+    <%= if @dev["picture_url"] != "" do %>
     <img src="<%= @dev["picture_url"] %>">
+    <% else %>
+    <img src="/images/hackers.jpg">
+    <% end %>
   </a>
   <div class="content">
 

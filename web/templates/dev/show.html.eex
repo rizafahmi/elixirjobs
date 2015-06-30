@@ -1,7 +1,11 @@
 <div class="ui raised segment" style="padding-bottom: 42px;">
   <div class="ui grid">
     <div class="four wide column">
-      <img class="ui small centered rounded image" src="<%= @dev["picture_url"] %>">
+      <%= if @dev["picture_url"] != "" do %>
+        <img class="ui small centered rounded image" src="<%= @dev["picture_url"] %>">
+      <% else %>
+        <img class="ui small centered rounded image" src="/images/hackers.jpg">
+      <% end %>
 
       <div class="ui divider"></div>
       <i class="world icon"></i>
