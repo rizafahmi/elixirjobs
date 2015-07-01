@@ -11,6 +11,7 @@
     </div>
       <div class="meta">
         <i class="location arrow icon"></i> <%= @dev["location"] %>
+        <i class="unhide icon"></i> <%= @dev["views"] %>
       </div>
       <div class="description"><%= @dev["short_desc"] %></div>
     </div>
