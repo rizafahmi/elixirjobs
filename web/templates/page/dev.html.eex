@@ -2,7 +2,7 @@
 
     <div class="content">
     <%= if @dev["picture_url"] != "" do %>
-    <img class="right floated mini ui image" src="<%= @dev["picture_url"] %>">
+    <img class="right floated mini ui image" style="width: 64px" src="<%= @dev["picture_url"] %>">
     <% else %>
     <img class="right floated mini ui image" style="width: 64px" src="http://semantic-ui.com/images/avatar/large/elliot.jpg">
     <% end %>
