@@ -17,13 +17,13 @@
     <meta property="og:description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
     <meta property="og:url" content="http://jobs.elixirdose.com/"/>
     <meta property="og:site_name" content="ElixirDose Jobs"/>
-    <meta property="og:image" content="/images/elixirjobs-logo.png"/>
-    <meta name="twitter:card" content="/images/elixirjobs-logo.png"/>
+    <meta property="og:image" content="http://jobs.elixirdose.com/images/elixirjobs-logo.png"/>
+    <meta name="twitter:card" content="http://jobs.elixirdose.com/images/elixirjobs-logo.png"/>
     <meta name="twitter:description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
     <meta name="twitter:title" content="<%= assigns[:page_title] || "ElixirDose Jobs" %>"/>
     <meta name="twitter:site" content="@elixirdose"/>
     <meta name="twitter:domain" content="ElixirDose"/>
-    <meta name="twitter:image:src" content="/images/elixirjobs-logo.png"/>
+    <meta name="twitter:image:src" content="http://jobs.elixirdose.com/images/elixirjobs-logo.png"/>
     <meta name="author" content="ElixirDose">
 
     <title><%= assigns[:page_title] || "ElixirDose Jobs" %></title>
