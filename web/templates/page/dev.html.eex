@@ -1,28 +1,52 @@
 <div class="card">
-  <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="image">
+
+    <div class="content">
     <%= if @dev["picture_url"] != "" do %>
-    <img src="<%= @dev["picture_url"] %>">
+    <img class="right floated mini ui image" src="<%= @dev["picture_url"] %>">
     <% else %>
-    <img src="/images/hackers.jpg">
+    <img class="right floated mini ui image" src="http://semantic-ui.com/images/avatar/large/elliot.jpg">
     <% end %>
-  </a>
-  <div class="content">
+    <div class="header">
+      <%= @dev["name"] %>
+    </div>
+      <div class="meta">
+        <i class="location arrow icon"></i> <%= @dev["location"] %>
+      </div>
+      <div class="description"><%= @dev["short_desc"] %></div>
+    </div>
+    <div class="extra content">
+      <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="ui basic fluid green button"> View </a>
+    </div>
 
 
-    <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="header"><%= @dev["name"] %></a>
-    <div class="description"><%= @dev["short_desc"] %></div>
-  </div>
-  <div class="extra content">
-    <span class="right floated">
-      <i class="unhide icon"></i> <%= @dev["views"] %>
-    </span>
-    <span>
-      <i class="location arrow icon"></i>
-      <%= if @dev["location"] do %>
-      <%= @dev["location"] %>
-      <% else %>
-      Location not set
-      <% end %>
-    </span>
-  </div>
+
+
+
+
+  <!-- <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="image"> -->
+  <!--   <%= if @dev["picture_url"] != "" do %> -->
+  <!--   <img src="<%= @dev["picture_url"] %>"> -->
+  <!--   <% else %> -->
+  <!--   <img src="/images/hackers.jpg"> -->
+  <!--   <% end %> -->
+  <!-- </a> -->
+  <!-- <div class="content"> -->
+
+
+  <!--   <a href="<%= dev_path(@conn, :show, @dev["id"]) %>" class="header"><%= @dev["name"] %></a> -->
+  <!--   <div class="description"><%= @dev["short_desc"] %></div> -->
+  <!-- </div> -->
+  <!-- <div class="extra content"> -->
+  <!--   <span class="right floated"> -->
+  <!--     <i class="unhide icon"></i> <%= @dev["views"] %> -->
+  <!--   </span> -->
+  <!--   <span> -->
+  <!--     <i class="location arrow icon"></i> -->
+  <!--     <%= if @dev["location"] do %> -->
+  <!--     <%= @dev["location"] %> -->
+  <!--     <% else %> -->
+  <!--     Location not set -->
+  <!--     <% end %> -->
+  <!--   </span> -->
+  <!-- </div> -->
 </div>

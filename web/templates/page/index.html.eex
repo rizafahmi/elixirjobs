@@ -65,7 +65,7 @@
 <div class="ui raised segment">
 
   <h3 class="ui dividing green header">Featured Developers</h3>
-  <div class="ui link cards">
+  <div class="ui cards">
     <%= for dev <- @devs do %>
       <%= render "dev.html", conn: @conn, dev: dev %>
     <% end %>
