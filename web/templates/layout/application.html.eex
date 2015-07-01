@@ -15,7 +15,7 @@
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="<%= assigns[:page_title] || "ElixirDose Jobs" %>"/>
     <meta property="og:description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
-    <meta property="og:url" content="http://jobs.elixirdose.com/"/>
+    <!-- <meta property="og:url" content="http://jobs.elixirdose.com/"/> -->
     <meta property="og:site_name" content="ElixirDose Jobs"/>
     <meta property="og:image" content="http://jobs.elixirdose.com/images/elixirjobs-logo.png"/>
     <meta property="og:image:width" content="350">
