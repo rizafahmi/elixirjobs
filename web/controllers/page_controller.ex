@@ -54,7 +54,6 @@ defmodule ElixirJobs.PageController do
       |> Query.update(%{views: views})
       |> Repo.run
 
-
     conn
     |> assign(:job, job)
     |> assign(:page_title, job["title"] <> " - " <> job["company"] <> " | Elixir Jobs")
