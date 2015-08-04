@@ -12,6 +12,7 @@ defmodule ElixirJobs.Endpoint do
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
   if code_reloading? do
+    socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
   end
@@ -31,5 +32,5 @@ defmodule ElixirJobs.Endpoint do
     key: "_elixir_jobs_key",
     signing_salt: "nKi1tTE+"
 
-  plug :router, ElixirJobs.Router
+  plug ElixirJobs.Router
 end
