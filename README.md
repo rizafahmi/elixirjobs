@@ -13,6 +13,8 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 ### Devs Data
 
+Insert this data from your [Rethinkdb admin site](http://localhost:8080).
+
 ```javascript
 r.db("test").table("jobs").insert([
   {
