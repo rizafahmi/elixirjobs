@@ -6,7 +6,6 @@ defmodule ElixirJobs.DevController do
 
   plug :authenticate when action in [:show]
   plug :attach_sessions
-  plug :action
   plug :render
 
   def show(conn, %{"id" => id}) do

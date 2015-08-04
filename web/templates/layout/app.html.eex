@@ -91,7 +91,7 @@
       <% end %>
 
 
-      <%= if @user do %>
+      <%= if assigns[:user] do %>
       <div class="ui right aligned segment">
         Welcome. Click here to <a href="<%= user_path @conn, :logout %>">Logout.</a>
       </div>

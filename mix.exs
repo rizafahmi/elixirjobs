@@ -28,13 +28,13 @@ defmodule ElixirJobs.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 0.13.1"},
-     {:phoenix_html, "~> 1.0"},
-     {:phoenix_live_reload, "~> 0.4", only: :dev},
+    [{:phoenix, "~> 0.15"},
+     {:phoenix_html, "~> 1.4"},
+     {:phoenix_live_reload, "~> 0.5", only: :dev},
      {:cowboy, "~> 1.0"},
      {:exrethinkdb, github: "hamiltop/exrethinkdb", ref: "55fb5b5ed892f28b7ae8ee1b2f8e54fb651bd611"},
      {:timex, "~> 0.13.4"},
-     {:earmark, github: "pragdave/earmark"},
+     {:earmark, "~> 0.1.17"},
      {:comeonin, "~> 1.0"}
     ]
   end

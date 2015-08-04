@@ -6,7 +6,6 @@ defmodule ElixirJobs.PageController do
 
   plug :authenticate when action in [:new, :show]
   plug :attach_sessions
-  plug :action
 
   def index(conn, _params) do
 
@@ -83,7 +82,7 @@ defmodule ElixirJobs.PageController do
     Repo.run(q)
 
     conn
-    |> put_flash(:info, "Yay! Job posted!!") 
+    |> put_flash(:info, "Yay! Job posted!!")
     |> redirect to: "/"
   end
 
