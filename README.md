@@ -17,17 +17,26 @@ Insert this data from your [Rethinkdb admin site](http://localhost:8080).
 
 ```javascript
 r.table("jobs").insert([
-    {
-    "name": "Steve Jobes",
-    "description": "Steve Jobes is a fictional character designed to resemble someone familiar to readers.",
-    "picture": "steve.jpg",
-    "location": "Cupertino"
-    },
-    {
-    "name": "Veronika Ossi",
-    "description": "Living in New York who enjoys kittens, music, and partying.",
-    "picture": "geek.jpg"
-    }
+  
+  
+  {
+"company":  "ElixirDose" ,
+"date_created": 1434440234 ,
+"description":  "## Job Descriptions
+
+This is job desc area
+    
+    " ,
+"email": "rizafahmi@gmail.com",
+"job_status":  "" ,
+"job_type":  "" ,
+"location":  "" ,
+"logo": "http://jobs.elixirdose.com/images/elixirjobs-logo.png",
+"posted_by": "rizafahmi@gmail.com",
+"title":  "Writer's Needed" ,
+"views": 7
+}
+  
 ]);
 
 r.table("devs").insert([
