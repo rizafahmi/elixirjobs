@@ -6,7 +6,6 @@ defmodule ElixirJobs.PageController do
 
   plug :authenticate when action in [:new, :show]
   plug :attach_sessions
-  plug :action
 
   def index(conn, _params) do
 
