@@ -35,7 +35,8 @@ defmodule ElixirJobs.Mixfile do
      {:exrethinkdb, github: "hamiltop/exrethinkdb", ref: "55fb5b5ed892f28b7ae8ee1b2f8e54fb651bd611"},
      {:timex, "~> 0.13.4"},
      {:earmark, "~> 0.1.17"},
-     {:comeonin, "~> 1.0"}
+     {:comeonin, "~> 1.0"},
+     {:rss, "~> 0.2.1"}
     ]
   end
 end
