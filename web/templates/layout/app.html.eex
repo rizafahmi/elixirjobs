@@ -10,6 +10,8 @@
 
     <meta name="description" content="Elixir Jobs is the best place to find, list jobs and developer community space specifically for Elixir Programming Language."/>
     <link rel="canonical" href="http://jobs.elixirdose.com"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS"
+      href="http://jobs.elixirdose.com/feed">
     <!-- <link rel="publisher" href="https://plus.google.com/+AppscoId"/> -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:type" content="website"/>
