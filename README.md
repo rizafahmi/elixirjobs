@@ -53,5 +53,4 @@ r.table("devs").insert([
     "website": "http://elixirdose.com",
     }
 ]);
-}]);
 ```
