@@ -83,7 +83,7 @@ defmodule ElixirJobs.PageController do
     Repo.run(q)
 
     conn
-    |> put_flash(:info, "Yay! Job posted!!") 
+    |> put_flash(:info, "Yay! Job posted!!")
     |> redirect to: "/"
   end
 
