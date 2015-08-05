@@ -3,7 +3,7 @@
   <h1 class="ui dividing blue header">Elixir Jobs</h4>
   <p>Elixir Jobs is the best place to find, list jobs and developer community space specifically for <a href="http://elixir-lang.org" target="_blank">Elixir Programming Language</a>. Looking for Elixir developers? Just post a job. Submit your awesome profile to kickstart your Elixir career. Entirely free!!
   </p>
-  <p>Browse the <a href="#"><%= @count_jobs %> active jobs</a> or 
+  <p>Browse the <a href="#active-jobs"><%= @count_jobs %> active jobs</a> or
   <%= if @current_dev["name"] do %>
   <a href="<%= user_path(@conn, :edit_profile) %>">update your profile</a>
   <% else %>
@@ -47,7 +47,9 @@
 </div>
 <div class="ui raised segment">
   <div class="ui divided list">
-    <h3 class="ui dividing orange header">Recent Jobs</h3>
+    <h3 class="ui dividing orange header">
+      <a name="active-jobs"></a>Recent Jobs
+    </h3>
     <%= for job <- @jobs do %>
       <%= render "job.html", conn: @conn, job: job %>
     <% end %>
