@@ -9,13 +9,13 @@
   <% else %>
   <a href="<%= user_path(@conn, :new_profile) %>" >create your profile</a>
   <% end %>
-   to join 
+   to join
   <%= if @current_dev["name"] do %>
   <a href="<%= user_path(@conn, :edit_profile) %>"><%= @count_devs %> registered Elixir developers</a>.
   <% else %>
   <a href="<%= user_path(@conn, :new_profile) %>"><%= @count_devs %> registered Elixir developers</a>.
   <% end %>
-   
+
     <p>Brought to you by <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.
   Follow us on Tiwtter <a href="https://twitter.com/elixirdose" target="_blank">@elixirdose</a>.</p>
 </div>
