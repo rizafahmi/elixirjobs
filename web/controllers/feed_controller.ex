@@ -18,12 +18,14 @@ defmodule ElixirJobs.FeedController do
     date = job["date_created"] |> Date.from(:secs, :epoch)
                                |> format_rfc
 
+    url = "#{@baseurl}/job/#{job["id"]}"
+
     RSS.item(
       job["title"],
       job["description"],
       date,
-      "#{@baseurl}/job/#{job["id"]}",
-      job["id"]
+      url, # <link>
+      url # <guid>
     )
   end
 
@@ -35,7 +37,7 @@ defmodule ElixirJobs.FeedController do
       @baseurl,
       @description,
       date,
-      "lang (#{@lang})"
+      @lang
     )
 
     items = Query.table("jobs") |> Repo.run
