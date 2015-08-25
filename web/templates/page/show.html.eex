@@ -37,7 +37,7 @@
       <div class="ui divider"></div>
       <i class="mail icon"></i> <%= @job["email"] %>
       <div class="ui divider"></div>
-      <i class="calendar icon"></i> Posted On <%= @job["date_created"] %>
+      <i class="calendar icon"></i> Posted On <%= convert_date @job["date_created"] %>
     </div>
     <div class="nine wide column"><%= to_html @job["description"] %></div>
   </div>

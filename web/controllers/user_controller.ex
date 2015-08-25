@@ -6,7 +6,6 @@ defmodule ElixirJobs.UserController do
 
   plug :attach_sessions
   plug :authenticate when action in [:new_profile, :edit_profile]
-  plug :action
 
   def login(conn, _params) do
 

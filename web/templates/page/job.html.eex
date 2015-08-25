@@ -6,7 +6,14 @@
   <% end %>
   <div style="padding-left: 20px;" class="content">
     <a href="<%= page_path(@conn, :show, @job["id"]) %>">
-      <div class="header"><%= @job["company"] %></div>
+      <div class="header"><%= @job["company"] %>
+        <%= if @job["job_status"] != "" do %>
+        <div class="ui red horizontal label"><i class="home icon"></i> <%= @job["job_status"] %></div> 
+        <% end %>
+        <%= if @job["job_type"] != "" do %>
+        <div class="ui teal horizontal label"><i class="newspaper icon"></i> <%= @job["job_type"] %></div> 
+        <% end %>
+      </div>
       <span><%= @job["title"] %></span>
     </a>
     <!-- <div class="ui teal label">New</div> -->
