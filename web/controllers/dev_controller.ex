@@ -6,7 +6,7 @@ defmodule ElixirJobs.DevController do
 
   plug :authenticate when action in [:show]
   plug :attach_sessions
-  plug :render
+  # plug :render
 
   def show(conn, %{"id" => id}) do
     q = Query.table("devs")
@@ -29,6 +29,7 @@ defmodule ElixirJobs.DevController do
     conn
     |> assign(:dev, dev)
     |> assign(:page_title, dev["name"] <> " | Elixir Developer")
+    |> render("show.html")
   end
 
   defp authenticate(conn, _params) do
