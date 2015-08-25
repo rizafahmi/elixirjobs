@@ -28,13 +28,6 @@ var formRules = {
       type : 'length[6]',
       prompt : 'Please provide at least 6 character of password'
     }]
-  },
-  confirmPassword : {
-    identifier : 'confirm_password',
-    rules : [{
-      type: 'match[password]',
-      prompt : 'Password should be the same'
-    }]
   }
 };
 
