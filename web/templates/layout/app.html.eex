@@ -111,7 +111,8 @@
     </div> <!-- /container -->
 
     <footer style="padding-top: 20px; padding-bottom:20px; text-align: center; margin-top: 20px;" class="ui inverted segment">
-      Made With <i class="heart icon"></i>By <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.  <br> Powered By <a href="http://www.phoenixframework.org/" target="_blank">Phoenix Framework</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="http://rethinkdb.com/" target="_blank">RethinkDB</a>. Code available <a href="https://github.com/rizafahmi/elixirjobs" target="_blank">over here</a>.
+      Made With <i class="heart icon"></i>By <a href="http://elixirdose.com/" target="_blank">ElixirDose</a>.  <br> Powered By <a href="http://www.phoenixframework.org/" target="_blank">Phoenix Framework</a>, <a href="http://semantic-ui.com/" target="_blank">Semantic UI</a> and <a href="http://rethinkdb.com/" target="_blank">RethinkDB</a>. <br>
+      Code available <a href="https://github.com/rizafahmi/elixirjobs" target="_blank"> on <i class="github icon"></i></a>. Subscribe to our <a href="/feed"><i class="rss icon"></i></a>.
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script>require("web/static/js/app")</script>
