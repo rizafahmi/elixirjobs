@@ -47,9 +47,12 @@ defmodule ElixirJobs.UserController do
     |> Query.filter(%{email: email})
 
     user = Repo.run(q).data |> List.first
-
-    if Comeonin.Bcrypt.checkpw(password, user["password"]) do
-      user
+    if user do
+      if Comeonin.Bcrypt.checkpw(password, user["password"]) do
+        user
+      else
+        nil
+      end
     else
       nil
     end
