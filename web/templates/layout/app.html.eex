@@ -115,6 +115,5 @@
       Code available <a href="https://github.com/rizafahmi/elixirjobs" target="_blank"> on <i class="github icon"></i></a>. Subscribe to our <a href="/feed"><i class="rss icon"></i></a>.
     </footer>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script>require("web/static/js/app")</script>
   </body>
 </html>
