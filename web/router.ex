@@ -17,9 +17,8 @@ defmodule ElixirJobs.Router do
     pipe_through :browser # Use the default browser stack
 
     get  "/", PageController, :index
-    get  "/job/new", PageController, :new
-    get  "/job/:id", PageController, :show
-    post "/job", PageController, :create
+    post "/jobs/:id", PageController, :update
+    resources "/jobs", PageController, except: [:update]
 
     get  "/users/login", UserController, :login
     post "/users/process_login", UserController, :process_login
