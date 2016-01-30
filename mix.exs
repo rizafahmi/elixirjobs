@@ -4,7 +4,7 @@ defmodule ElixirJobs.Mixfile do
   def project do
     [app: :elixir_jobs,
      version: "0.0.1",
-     elixir: "~> 1.1.1",
+     elixir: "~> 1.2.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
