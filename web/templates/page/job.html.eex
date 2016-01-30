@@ -13,6 +13,9 @@
         <%= if @job["job_type"] != "" do %>
         <div class="ui teal horizontal label"><i class="newspaper icon"></i> <%= @job["job_type"] %></div> 
         <% end %>
+        <%= if @job["location"] != "" do %>
+        <div class="ui grey horizontal label"><i class="globe icon"></i> <%= @job["location"] %></div> 
+        <% end %>
       </div>
       <span><%= @job["title"] %></span>
     </a>
