@@ -38,6 +38,10 @@
       <i class="mail icon"></i> <%= @job["email"] %>
       <div class="ui divider"></div>
       <i class="calendar icon"></i> Posted On <%= convert_date @job["date_created"] %>
+      <br><br>
+      <%= if @job["posted_by"] == @user do  %>
+        <a href="<%= page_path(@conn, :edit, @job["id"]) %>" class="ui green button">Edit</a>
+      <% end %>
     </div>
     <div class="nine wide column"><%= to_html @job["description"] %></div>
   </div>
