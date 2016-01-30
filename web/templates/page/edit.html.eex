@@ -1,0 +1,49 @@
+<div class="ui segment">
+  <form class="ui form" action="<%= page_path(@conn, :update, @job["id"]) %>" method="post">
+    <div class="ui dividing header">New Job</div>
+    <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
+    <div class="field">
+      <label for="">Job Title</label>
+      <input type="text" name="title" placeholder="Your Job Title such as Elixir Developer Needed" value="<%= @job["title"] %>">
+    </div>
+    <div class="field">
+      <label for="">Company</label>
+      <input type="text" name="company" placeholder="Your company name" value="<%= @job["company"] %>">
+    </div>
+    <div class="field">
+      <label for="">Company Logo</label>
+      <input type="text" name="logo" placeholder="http://elixirdose.com/images/logo.png" value="<%= @job["logo"] %>">
+    </div>
+    <div class="field">
+      <label for="">Location</label>
+      <input type="text" name="location" placeholder="Company Location" value="<%= @job["location"] %>">
+    </div>
+    <div class="field">
+      <label for="">Job Description</label>
+      <textarea id="description" name="description" placeholder="Job description. Markdown format accepted." cols="30" rows="10" value="<%= @job["description"] %>"></textarea>
+    </div>
+    <div class="field">
+      <label for="">Job Status</label>
+      <select id="" class="ui dropdown" name="job_status">
+        <option value="">Not Specified</option>
+        <option value="Remote">Remote</option>
+        <option value="Onsite">Onsite</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="">Job Type</label>
+      <select id="" name="job_type" class="ui dropdown">
+        <option value="">Not Specified</option>
+        <option value="Hourly Contract">Hourly Contract</option>
+        <option value="Fulltime">Fulltime</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="">Contact Email</label>
+      <input type="email" name="email" placeholder="name@mail.com" value="<%= @job["email"] %>">
+    </div>
+    <button class="ui submit button" type="submit">Submit</button>
+  </form>
+</div>
