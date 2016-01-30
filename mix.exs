@@ -4,7 +4,7 @@ defmodule ElixirJobs.Mixfile do
   def project do
     [app: :elixir_jobs,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "~> 1.1.1",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -28,12 +28,12 @@ defmodule ElixirJobs.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~> 0.17"},
+    [{:phoenix, "~> 1.0.3"},
      {:phoenix_html, "~> 2.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:cowboy, "~> 1.0"},
      {:exrethinkdb, github: "hamiltop/exrethinkdb", ref: "55fb5b5ed892f28b7ae8ee1b2f8e54fb651bd611"},
-     {:timex, "~> 0.13.4"},
+     {:timex, "~> 0.19.5"},
      {:earmark, "~> 0.1.17"},
      {:comeonin, "~> 1.0"},
      {:rss, "~> 0.2.1"}
