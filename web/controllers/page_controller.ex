@@ -86,6 +86,34 @@ defmodule ElixirJobs.PageController do
     |> redirect to: "/"
   end
 
+  def edit(conn, %{"id" => id}) do
+    q = Query.table("jobs")
+      |> Query.filter(%{"id": id, "posted_by": get_session(conn, :user)})
+    result = Repo.run(q)
+    if List.first(result.data) do
+      job = hd(result.data)
+      conn
+      |> assign(:job, job)
+      |> assign(:page_title, job["title"] <> " - " <> job["company"] <> " | Elixir Jobs")
+      |> render("edit.html")
+    else
+      conn
+      |> put_flash(:error, "You are not authorized!!")
+      |> redirect to: "/"
+    end
+  end
+
+  def update(conn, params) do
+    job = job_params(conn, params)
+    q = Query.table("jobs")
+        |> Query.filter(%{"id": job.id, "posted_by": get_session(conn, :user)})
+        |> Query.update(job)
+    Repo.run(q)
+    conn
+    |> put_flash(:info, "Yay! Job post updated!!")
+    |> redirect to: page_path(conn, :show, job.id)
+  end
+
   defp authenticate(conn, _params) do
     if is_nil(get_session(conn, :user)) do
         conn |> put_flash(:error, "You need to login first") |> redirect(to: "/users/login") |> halt
@@ -101,6 +129,21 @@ defmodule ElixirJobs.PageController do
   defp now_epoch do
     {mega, secs, _} = :erlang.now()
     mega * 1000000 + secs
+  end
+
+  def job_params(conn, params) do
+    job = %{
+      id: params["id"],
+      title: params["title"],
+      company: params["company"],
+      description: params["description"],
+      email: params["email"],
+      job_type: params["job_type"],
+      location: params["location"],
+      job_status: params["job_status"],
+      logo: params["logo"],
+      posted_by: get_session(conn, :user)
+    }
   end
 
 end
