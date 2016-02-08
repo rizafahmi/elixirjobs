@@ -16,16 +16,18 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Insert this data from your [Rethinkdb admin site](http://localhost:8080). Otherwise, the app will not gonna worked.
 
 ```javascript
+r.table("users")
+
 r.table("jobs").insert([
-  
-  
+
+
   {
 "company":  "ElixirDose" ,
 "date_created": 1434440234 ,
 "description":  "## Job Descriptions
 
 This is job desc area
-    
+
     " ,
 "email": "rizafahmi@gmail.com",
 "job_status":  "" ,
@@ -36,13 +38,13 @@ This is job desc area
 "title":  "Writer's Needed" ,
 "views": 7
 }
-  
+
 ]);
 
 r.table("devs").insert([
     {
     "description": "Mad computer scientist who enjoy managing geeks and developers since 2011, more than 10 years of successful experience in Programming Web Applications using PHP, Python and *Elixir*, iOS Applications using Obj-C and Android Applications using  Java. Also have capabilities  handling various databases such as PostgreSQL, MySQL, Mongodb, SQLite, CouchDB. My specialty is trying crazy ideas and getting them to work." ,
-    "email": "rizafahmi@gmail.com", 
+    "email": "rizafahmi@gmail.com",
     "github_url": "https://github.com/rizafahmi",
     "id":  "7211d0e4-973f-4106-b82b-f39f08c345f3" ,
     "interest_fulltime":  "on" ,
