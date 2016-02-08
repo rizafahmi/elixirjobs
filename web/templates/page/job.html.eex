@@ -5,18 +5,27 @@
   <img class="ui avatar image" src="/images/elixir-logo.png">
   <% end %>
   <div style="padding-left: 20px;" class="content">
+    <div class="header">
+      <a href="<%= page_path(@conn, :show, @job["id"]) %>">
+        <%= @job["company"] %>
+      </a>
+      <%= if @job["job_status"] != "" do %>
+      <a href="<%= page_path(@conn, :index, type: :job_status,  q: @job["job_status"]) %>">
+        <div class="ui red horizontal label"><i class="home icon"></i> <%= @job["job_status"] %></div>
+      </a>
+      <% end %>
+      <%= if @job["job_type"] != "" do %>
+      <a href="<%= page_path(@conn, :index, type: :job_type, q: @job["job_type"]) %>">
+        <div class="ui teal horizontal label"><i class="newspaper icon"></i> <%= @job["job_type"] %></div>
+      </a>
+      <% end %>
+      <%= if @job["location"] != "" do %>
+      <a href="<%= page_path(@conn, :index, type: :location, q: @job["location"]) %>">
+        <div class="ui grey horizontal label"><i class="globe icon"></i> <%= @job["location"] %></div>
+      </a>
+      <% end %>
+    </div>
     <a href="<%= page_path(@conn, :show, @job["id"]) %>">
-      <div class="header"><%= @job["company"] %>
-        <%= if @job["job_status"] != "" do %>
-        <div class="ui red horizontal label"><i class="home icon"></i> <%= @job["job_status"] %></div> 
-        <% end %>
-        <%= if @job["job_type"] != "" do %>
-        <div class="ui teal horizontal label"><i class="newspaper icon"></i> <%= @job["job_type"] %></div> 
-        <% end %>
-        <%= if @job["location"] != "" do %>
-        <div class="ui grey horizontal label"><i class="globe icon"></i> <%= @job["location"] %></div> 
-        <% end %>
-      </div>
       <span><%= @job["title"] %></span>
     </a>
     <!-- <div class="ui teal label">New</div> -->
