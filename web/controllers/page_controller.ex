@@ -7,9 +7,18 @@ defmodule ElixirJobs.PageController do
   plug :authenticate when action in [:new, :show]
   plug :attach_sessions
 
-  def index(conn, _params) do
+  def index(conn, params) do
 
     q = Query.table("jobs")
+    q = case params["type"] do
+      "job_status" ->
+        q |> Query.filter(%{job_status: params["q"]})
+      "job_type" ->
+        q |> Query.filter(%{job_type: params["q"]})
+      "location" ->
+        q |> Query.filter(%{location: params["q"]})
+      _ -> q
+    end
     jobs = Repo.run(q)
 
     q = Query.table("devs")
