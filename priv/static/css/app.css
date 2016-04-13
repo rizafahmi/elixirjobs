@@ -1,8 +1,40 @@
 .container {
   max-width: 930px;
   margin: 0 auto;
+  padding-bottom: 30px;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html, body {
+  height: auto !important;
 }
 
+html {
+    position: relative;
+    min-height: 100%;  
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 5rem !important;
+  
+}
+
+.ui.fixed.menu + .ui.grid {
+    padding-top: 3.75rem !important;
+}
+
+.page-footer {
+  color: #fff;
+  background-color: #1b1c1d;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 6rem;
+  padding-top: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
 /*!
  * # Semantic UI 2.0.0 - Accordion
  * http://github.com/semantic-org/semantic-ui/
