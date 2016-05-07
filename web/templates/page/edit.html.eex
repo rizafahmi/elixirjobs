@@ -20,7 +20,8 @@
     </div>
     <div class="field">
       <label for="">Job Description</label>
-      <textarea id="description" name="description" placeholder="Job description. Markdown format accepted." cols="30" rows="10" value="<%= @job["description"] %>"></textarea>
+      <%= @job["description"] %>
+      <textarea id="description" name="description" placeholder="Job description. Markdown format accepted." cols="30" rows="10"><%= @job["description"] %></textarea>
     </div>
     <div class="field">
       <label for="">Job Status</label>
