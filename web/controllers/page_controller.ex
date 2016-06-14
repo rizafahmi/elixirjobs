@@ -123,6 +123,16 @@ defmodule ElixirJobs.PageController do
     |> redirect to: page_path(conn, :show, job.id)
   end
 
+  def delete(conn, %{"id" => id}) do
+    q = Query.table("jobs")
+      |> Query.filter(%{"id": id, "posted_by": get_session(conn, :user)})
+      |> Query.delete()
+    Repo.run(q)
+    conn
+    |> put_flash(:info, "Yay! Job post deleted!!")
+    |> redirect to: "/"
+  end
+
   defp authenticate(conn, _params) do
     if is_nil(get_session(conn, :user)) do
         conn |> put_flash(:error, "You need to login first") |> redirect(to: "/users/login") |> halt

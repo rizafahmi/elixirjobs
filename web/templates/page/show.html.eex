@@ -40,7 +40,14 @@
       <i class="calendar icon"></i> Posted On <%= convert_date @job["date_created"] %>
       <br><br>
       <%= if @job["posted_by"] == @user do  %>
-        <a href="<%= page_path(@conn, :edit, @job["id"]) %>" class="ui green button">Edit</a>
+      <ul class="job-actions">
+        <li>
+          <a href="<%= page_path(@conn, :edit, @job["id"]) %>" class="ui green button">Edit</a>
+        </li>
+        <li>
+          <%= link "Delete", to: page_path(@conn, :delete, @job["id"]), method: :delete, class: "ui red button"%>
+        </li>
+        </ul>
       <% end %>
     </div>
     <div class="nine wide column"><%= to_html @job["description"] %></div>

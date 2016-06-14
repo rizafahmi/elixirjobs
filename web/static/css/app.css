@@ -2,3 +2,13 @@
   max-width: 930px;
   margin: 0 auto;
 }
+
+.job-actions {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job-actions li {
+  float: left;
+}
