@@ -42,7 +42,7 @@
       <%= if @job["posted_by"] == @user do  %>
       <ul class="job-actions">
         <li>
-          <a href="<%= page_path(@conn, :edit, @job["id"]) %>" class="ui green button">Edit</a>
+          <%= link "Edit", to: page_path(@conn, :edit, @job["id"]), class: "ui green button"%>
         </li>
         <li>
           <%= link "Delete", to: page_path(@conn, :delete, @job["id"]), method: :delete, data: [confirm: "Really?"], class: "ui red button"%>
