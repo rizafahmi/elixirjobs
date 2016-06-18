@@ -45,7 +45,7 @@
           <a href="<%= page_path(@conn, :edit, @job["id"]) %>" class="ui green button">Edit</a>
         </li>
         <li>
-          <%= link "Delete", to: page_path(@conn, :delete, @job["id"]), method: :delete, class: "ui red button"%>
+          <%= link "Delete", to: page_path(@conn, :delete, @job["id"]), method: :delete, data: [confirm: "Really?"], class: "ui red button"%>
         </li>
         </ul>
       <% end %>
