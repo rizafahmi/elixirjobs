@@ -51,11 +51,14 @@ defmodule ElixirJobs.PageController do
     result = Repo.run(q)
 
     job = hd(result.data)
-    if is_nil(job["views"]) do
-      views = 1
-    else
-      views = job["views"] + 1
-    end
+
+    views =
+      case is_nil(job["views"]) do
+        true ->
+          1
+        false ->
+          job["views"] + 1
+      end
 
     Query.table("jobs")
       |> Query.get(id)
@@ -83,7 +86,7 @@ defmodule ElixirJobs.PageController do
       job_status: params["job_status"],
       logo: params["logo"],
       posted_by: get_session(conn, :user),
-      date_created: now_epoch
+      date_created: :os.system_time(:seconds)
       }
 
     q = Query.table("jobs")
@@ -92,7 +95,7 @@ defmodule ElixirJobs.PageController do
 
     conn
     |> put_flash(:info, "Yay! Job posted!!")
-    |> redirect to: "/"
+    |> redirect(to: "/")
   end
 
   def edit(conn, %{"id" => id}) do
@@ -108,7 +111,7 @@ defmodule ElixirJobs.PageController do
     else
       conn
       |> put_flash(:error, "You are not authorized!!")
-      |> redirect to: "/"
+      |> redirect(to: "/")
     end
   end
 
@@ -120,7 +123,7 @@ defmodule ElixirJobs.PageController do
     Repo.run(q)
     conn
     |> put_flash(:info, "Yay! Job post updated!!")
-    |> redirect to: page_path(conn, :show, job.id)
+    |> redirect(to: page_path(conn, :show, job.id))
   end
 
   def delete(conn, %{"id" => id}) do
@@ -130,7 +133,7 @@ defmodule ElixirJobs.PageController do
     Repo.run(q)
     conn
     |> put_flash(:info, "Yay! Job post deleted!!")
-    |> redirect to: "/"
+    |> redirect(to: "/")
   end
 
   defp authenticate(conn, _params) do
@@ -145,13 +148,8 @@ defmodule ElixirJobs.PageController do
     conn |> assign(:user, get_session(conn, :user))
   end
 
-  defp now_epoch do
-    {mega, secs, _} = :erlang.now()
-    mega * 1000000 + secs
-  end
-
   def job_params(conn, params) do
-    job = %{
+    %{
       id: params["id"],
       title: params["title"],
       company: params["company"],
