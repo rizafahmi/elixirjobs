@@ -46,5 +46,3 @@ $(".ui.form").form(formRules, formSettings);
 $('.message .close').on('click', function() {
   $(this).closest('.message').fadeOut();
 });
-
-export default App
