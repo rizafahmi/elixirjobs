@@ -28,7 +28,7 @@ defmodule ElixirJobs.UserController do
 
     conn
     |> put_flash(:info, "Super! Your account created.")
-    |> redirect to: "/"
+    |> redirect(to: "/")
   end
 
   def process_login(conn, params) do
@@ -100,7 +100,7 @@ defmodule ElixirJobs.UserController do
 
     conn
     |> put_flash(:info, "Super! Your profile added.")
-    |> redirect to: "/"
+    |> redirect(to: "/")
 
   end
 
@@ -112,7 +112,7 @@ defmodule ElixirJobs.UserController do
 
     conn
       |> assign(:profile, profile)
-      |> render "edit_profile.html"
+      |> render("edit_profile.html")
 
   end
 
@@ -144,7 +144,7 @@ defmodule ElixirJobs.UserController do
 
     conn
     |> put_flash(:info, "Super! Your profile updated.")
-    |> redirect to: "/"
+    |> redirect(to: "/")
 
     conn
   end
