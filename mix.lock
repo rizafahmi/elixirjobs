@@ -15,7 +15,7 @@
   "plug": {:hex, :plug, "1.0.2", "cc341ac229c88fc6b04d1771f62f675640f24cea97a6313a49ffcaa8236e949e", [:mix], [{:cowboy, "~> 1.0", [hex: :cowboy, optional: true]}]},
   "poison": {:hex, :poison, "1.4.0", "cd5afb9db7f0d19487572fa28185b6d4de647f14235746824e77b3139b79b725", [:mix], []},
   "ranch": {:hex, :ranch, "1.2.0", "b286a948a0706a700a9f577e5cecbb2dc66097ea79f3ddb20ba5536069bdb7aa", [:make], []},
-  "rss": {:hex, :rss, "0.2.1", "034f2fe5250a490862e692eb34a31bb5c142913c2fe0fb093e1fd982f010e15d", [:mix], []},
+  "rss": {:git, "https://github.com/denispeplin/elixir-rss.git", "fc5bfb19cd54a1f87d642c4a665ab2fe7abadf0e", []},
   "ssl_verify_hostname": {:hex, :ssl_verify_hostname, "1.0.5", "2e73e068cd6393526f9fa6d399353d7c9477d6886ba005f323b592d389fb47be", [:make], []},
   "timex": {:hex, :timex, "0.19.5", "506ba0f20d71700366e281cbc2b67b74b15924422317c2b70f4bc20db155acd7", [:mix], [{:tzdata, "~> 0.5.2", [hex: :tzdata, optional: false]}, {:combine, "~> 0.5", [hex: :combine, optional: false]}]},
   "tzdata": {:hex, :tzdata, "0.5.6", "d44c59175b8e9a170b3b17d6933820de98a3f0932f3a0615d884b8c20e93a87a", [:mix], [{:hackney, "~> 1.0", [hex: :hackney, optional: false]}]}}

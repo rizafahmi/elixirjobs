@@ -36,7 +36,7 @@ defmodule ElixirJobs.Mixfile do
      {:timex, "~> 0.19.5"},
      {:earmark, "~> 0.1.17"},
      {:comeonin, "~> 1.0"},
-     {:rss, "~> 0.2.1"}
+     {:rss, "~> 0.2.1", github: "denispeplin/elixir-rss"}
     ]
   end
 end
