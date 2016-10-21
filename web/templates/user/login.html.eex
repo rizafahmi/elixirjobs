@@ -1,7 +1,7 @@
 <div class="ui segment">
   <div class="ui relaxed grid">
     <div class="eight wide column">
-      <form class="ui form" action="<%= user_path(@conn, :process_login) %>" method="post" data-parsley-validate>
+      <form class="ui form" action="<%= user_path(@conn, :process_login, @flash) %>" method="post" data-parsley-validate>
         <div class="ui dividing blue header">Login</div>
         <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
         <div class="field">
@@ -21,7 +21,7 @@
       OR
     </div>
     <div class="eight wide column">
-      <form class="ui form" action="<%= user_path(@conn, :create) %>" method="post" data-parsley-validate>
+      <form class="ui form" action="<%= user_path(@conn, :create, @flash) %>" method="post" data-parsley-validate>
         <div class="ui dividing orange header">New User</div>
         <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
         <div class="field">
