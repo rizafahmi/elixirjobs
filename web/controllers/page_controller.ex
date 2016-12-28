@@ -136,9 +136,12 @@ defmodule ElixirJobs.PageController do
     |> redirect(to: "/")
   end
 
-  defp authenticate(conn, _params) do
+  defp authenticate(conn, params) do
     if is_nil(get_session(conn, :user)) do
-        conn |> put_flash(:error, "You need to login first") |> redirect(to: "/users/login") |> halt
+        conn
+        |> put_flash(:error, "You need to login first")
+        |> put_flash(:redir, conn.request_path)
+        |> redirect(to: "/users/login") |> halt
     else
       conn
     end

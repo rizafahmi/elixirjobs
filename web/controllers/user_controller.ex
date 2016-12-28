@@ -9,7 +9,7 @@ defmodule ElixirJobs.UserController do
 
   def login(conn, _params) do
 
-    render conn, "login.html"
+    render conn, "login.html", flash: get_flash(conn)
   end
 
   def create(conn, params) do
@@ -24,21 +24,32 @@ defmodule ElixirJobs.UserController do
 
     q = Query.table("users")
     |> Query.insert(user)
-    Repo.run(q)
 
-    conn
-    |> put_flash(:info, "Super! Your account created.")
-    |> redirect(to: "/")
+    result = Repo.run(q)
+
+    if result.data["errors"] == 0 do
+      conn
+      |> put_session(:user, params["email"])
+      |> put_flash(:info, "Super! Your account created.")
+      |> redirect(to: params["redir"] || "/")
+      |> halt
+    else
+      conn
+      |> put_flash(:error, "Account creation failed, please try again")
+      |> redirect(to: "/users/login")
+    end
   end
 
   def process_login(conn, params) do
     if is_nil(do_login(params["email"], params["password"])) do
       conn
+      |> put_flash(:redir, params["redir"])
       |> put_flash(:error, "Login failed") |> redirect(to: "/users/login") |> halt
     else
       conn = put_session(conn, :user, params["email"])
       conn
-        |> put_flash(:info, "Thanks for logging in!") |> redirect(to: "/")
+        |> put_flash(:info, "Thanks for logging in!")
+        |> redirect(to: params["redir"] || "/")
     end
   end
 
