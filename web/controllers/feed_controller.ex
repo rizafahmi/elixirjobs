@@ -18,7 +18,7 @@ defmodule ElixirJobs.FeedController do
     date = job["date_created"] |> Date.from(:secs, :epoch)
                                |> format_rfc
 
-    url = "#{@baseurl}/job/#{job["id"]}"
+    url = "#{@baseurl}/jobs/#{job["id"]}"
 
     RSS.item(
       job["title"],
