@@ -30,7 +30,7 @@ defmodule ElixirJobs.UserController do
     if result.data["errors"] == 0 do
       conn
       |> put_session(:user, params["email"])
-      |> put_flash(:info, "Super! Your account created.")
+      |> put_flash(:info, "Super! Your account was created.")
       |> redirect(to: params["redir"] || "/")
       |> halt
     else
@@ -110,7 +110,7 @@ defmodule ElixirJobs.UserController do
 
 
     conn
-    |> put_flash(:info, "Super! Your profile added.")
+    |> put_flash(:info, "Super! Your profile was added.")
     |> redirect(to: "/")
 
   end
@@ -154,7 +154,7 @@ defmodule ElixirJobs.UserController do
     Repo.run(q)
 
     conn
-    |> put_flash(:info, "Super! Your profile updated.")
+    |> put_flash(:info, "Super! Your profile was updated.")
     |> redirect(to: "/")
 
     conn
