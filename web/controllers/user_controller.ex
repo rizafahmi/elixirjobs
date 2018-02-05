@@ -110,7 +110,7 @@ defmodule ElixirJobs.UserController do
 
 
     conn
-    |> put_flash(:info, "Super! Your profile added.")
+    |> put_flash(:info, "Super! Your profile was added.")
     |> redirect(to: "/")
 
   end
@@ -154,7 +154,7 @@ defmodule ElixirJobs.UserController do
     Repo.run(q)
 
     conn
-    |> put_flash(:info, "Super! Your profile updated.")
+    |> put_flash(:info, "Super! Your profile was updated.")
     |> redirect(to: "/")
 
     conn
