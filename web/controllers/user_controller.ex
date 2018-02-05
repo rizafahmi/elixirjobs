@@ -30,7 +30,7 @@ defmodule ElixirJobs.UserController do
     if result.data["errors"] == 0 do
       conn
       |> put_session(:user, params["email"])
-      |> put_flash(:info, "Super! Your account created.")
+      |> put_flash(:info, "Super! Your account was created.")
       |> redirect(to: params["redir"] || "/")
       |> halt
     else
